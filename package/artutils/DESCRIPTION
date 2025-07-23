@@ -1,6 +1,6 @@
 Package: artutils
 Title: Artalytics Toolkit
-Version: 0.6.9
+Version: 0.7.1
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -29,7 +29,6 @@ Imports:
   stats,
   stringr,
   tidyjson,
-  uuid,
   waiter,
   artcore,
   zip
@@ -42,4 +41,5 @@ Depends:
   R (>= 4.1.0)
 Suggests:
   covr,
-  testthat (>= 3.0.0)
+  testthat (>= 3.0.0),
+  uuid
