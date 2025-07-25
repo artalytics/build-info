@@ -1,20 +1,20 @@
 Package: pixelsense
 Title: Pixelsense
-Version: 0.6.3
+Version: 0.7.1
 Authors@R: 
   person(
     given = "Bobby", 
     family = "Fatemi", 
     role = c("aut", "cre"), 
-    email = "bfatemi07@gmail.com"
+    email = "bobby@artalytics.app"
   )
 Description: Pixelsense Verification.
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
-URL: https://github.com/r-data-science/pixelsense
-BugReports: https://github.com/r-data-science/pixelsense/issues
+URL: https://github.com/artalytics/pixelsense
+BugReports: https://github.com/artalytics/pixelsense/issues
 Config/testthat/edition: 3
 Imports:
     data.table,
@@ -33,13 +33,14 @@ Imports:
     tinytex,
     waiter,
     artcore,
-    ssh
+    ssh,
+    zip
 Remotes:
   RinteRface/shinyNextUI,
-  r-data-science/artopenai,
+  artalytics/artopenai,
   r-data-science/rdstools,
-  r-data-science/artutils,
-  r-data-science/artcore
+  artalytics/artutils,
+  artalytics/artcore
 Depends:
   R (>= 4.1.0)
 Suggests: 
