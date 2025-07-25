@@ -36,11 +36,11 @@ Imports:
     ssh,
     zip
 Remotes:
-  RinteRface/shinyNextUI,
   artalytics/artopenai,
-  r-data-science/rdstools,
   artalytics/artutils,
-  artalytics/artcore
+  artalytics/artcore,
+  r-data-science/rdstools,
+  RinteRface/shinyNextUI
 Depends:
   R (>= 4.1.0)
 Suggests: 
