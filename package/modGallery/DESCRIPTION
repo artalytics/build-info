@@ -1,11 +1,11 @@
 Package: modGallery
 Title: Art Gallery Shiny Module
-Version: 0.7.3
+Version: 0.7.4
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
            role = c("aut", "cre"),
-           email = "bfatemi07@gmail.com")
+           email = "bobby@artalytics.app")
 Description: Module for Artalytics shiny app.
 License: file LICENSE
 Encoding: UTF-8
