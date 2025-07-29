@@ -29,7 +29,7 @@ Imports:
   artutils
 Remotes:
   github::JohnCoene/waiter,
-  github::artalytics/artutils
+  github::artalytics/artutils@cdn-implementation
 Depends: 
   R (>= 4.1.0)
 Suggests:
