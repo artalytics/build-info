@@ -1,6 +1,6 @@
 Package: artopenai
 Title: OpenAI Toolkit
-Version: 0.7.2
+Version: 0.7.3
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -15,18 +15,20 @@ URL: https://github.com/artalytics/artopenai
 BugReports: https://github.com/artalytics/artopenai/issues
 Config/testthat/edition: 3
 Imports:
-  base64enc,
-  data.table,
-  fs,
-  httr2,
-  jsonlite,
-  lubridate,
-  magick,
-  stringr,
-  tidyjson,
-  artcore
+    base64enc,
+    data.table,
+    fs,
+    httr2,
+    jsonlite,
+    lubridate,
+    magick,
+    stringr,
+    tidyjson,
+    artcore,
+    artutils
 Remotes:
-  github::artalytics/artcore
+  github::artalytics/artcore,
+  github::artalytics/artutils
 Depends: 
   R (>= 4.1.0)
 Suggests:
