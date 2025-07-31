@@ -1,11 +1,11 @@
 Package: artutils
 Title: Artalytics Toolkit
-Version: 0.7.1
+Version: 0.7.9
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
            role = c("aut", "cre"),
-           email = "bfatemi07@gmail.com")
+           email = "bobby@artalytics.app")
 Description: Package containing tools and data shared across the modules of the Artalytics Shiny app.
 License: file LICENSE
 Encoding: UTF-8
@@ -16,10 +16,8 @@ BugReports: https://github.com/artalytics/artutils/issues
 Config/testthat/edition: 3
 Imports:
   rdstools,
-  artopenai,
   data.table,
   DBI,
-  fresh,
   fs,
   jsonlite,
   lubridate,
@@ -29,13 +27,9 @@ Imports:
   stats,
   stringr,
   tidyjson,
-  waiter,
-  artcore,
-  zip
+  artcore
 Remotes:
-  JohnCoene/waiter,
   r-data-science/rdstools,
-  artalytics/artopenai,
   artalytics/artcore
 Depends: 
   R (>= 4.1.0)
