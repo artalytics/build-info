@@ -1,6 +1,6 @@
 Package: artpipelines
 Title: Art Pipelines
-Version: 0.7.4
+Version: 0.7.5
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -15,31 +15,33 @@ URL: https://github.com/artalytics/artpipelines
 BugReports: https://github.com/artalytics/artpipelines/issues
 Config/testthat/edition: 3
 Imports:
-  artbenchmark,
-  artopenai,
-  rdstools,
-  artcore,
-  artutils,
-  av,
-  data.table,
-  exiftoolr,
-  fs,
-  ggplot2,
-  ggtext,
-  jsonlite,
-  lubridate,
-  magick,
-  rlang,
-  shiny,
-  stats,
-  stringr,
-  utils,
-  httr,
-  pixelsense
+    artbenchmark,
+    artopenai,
+    artopensea,
+    artcore,
+    artutils,
+    pixelsense,
+    rdstools,
+    av,
+    data.table,
+    exiftoolr,
+    fs,
+    ggplot2,
+    ggtext,
+    jsonlite,
+    lubridate,
+    magick,
+    rlang,
+    shiny,
+    stats,
+    stringr,
+    archive,
+    utils
 Remotes:
   r-data-science/rdstools,
   artalytics/artbenchmark,
   artalytics/artopenai,
+  artalytics/artopensea,
   artalytics/artutils,
   artalytics/artcore,
   artalytics/pixelsense
