@@ -56,4 +56,5 @@ Suggests:
   testthat (>= 3.0.0),
   rvest,
   httr2,
-  xml2
+  xml2,
+  webfakes
