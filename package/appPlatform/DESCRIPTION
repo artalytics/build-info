@@ -1,6 +1,6 @@
 Package: appPlatform
 Title: Artalytics App
-Version: 0.3.1
+Version: 0.4.0
 Authors@R: 
   person(
     given = "Bobby", 
@@ -17,8 +17,6 @@ URL: https://github.com/artalytics/appPlatform
 BugReports: https://github.com/artalytics/appPlatform/issues
 Config/testthat/edition: 3
 Imports:
-  rdstools,
-  rpgconn,
   artutils,
   modBrowse,
   modFrames,
@@ -34,8 +32,6 @@ Imports:
   fs
 Remotes:
   JohnCoene/waiter,
-  r-data-science/rdstools,
-  r-data-science/rpgconn,
   artalytics/modFrames,
   artalytics/artutils,
   artalytics/modGallery,
