@@ -1,6 +1,6 @@
 Package: artpipelines
 Title: Art Pipelines
-Version: 0.8.2
+Version: 0.8.3
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
