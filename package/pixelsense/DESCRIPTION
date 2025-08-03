@@ -1,6 +1,6 @@
 Package: pixelsense
 Title: Pixelsense
-Version: 0.7.1
+Version: 0.7.4
 Authors@R: 
   person(
     given = "Bobby", 
