@@ -27,10 +27,10 @@ Imports:
   stats,
   stringr,
   waiter,
-  artutils (>= 0.7.3)
+  artutils
 Remotes:
   github::JohnCoene/waiter,
-  github::artalytics/artutils@cdn-implementation
+  github::artalytics/artutils
 Depends: 
   R (>= 4.1.0)
 Suggests:
