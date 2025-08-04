@@ -13,6 +13,7 @@ LazyData: true
 RoxygenNote: 7.3.2
 URL: https://github.com/artalytics/artbenchmark
 BugReports: https://github.com/artalytics/artbenchmark/issues
+SystemRequirements: ImageMagick++ (Magick++ development headers)
 Config/testthat/edition: 3
 Imports:
   data.table,
