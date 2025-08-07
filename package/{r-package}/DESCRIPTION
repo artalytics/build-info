@@ -1,12 +1,25 @@
-Package: r-package
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Package: {r-package}
+Title: {r-package-title}
+Version: 0.0.1
 Authors@R: 
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Description: {r-package-description}
 License: file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-URL: https://github.com/artalytics/r-package
-BugReports: https://github.com/artalytics/r-package/issues
+URL: https://github.com/artalytics/{r-package}
+BugReports: https://github.com/artalytics/{r-package}/issues
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+		rdstools (>= 0.2.2),
+    rpgconn (>= 0.3.1),
+    artcore (>= 0.7.1),
+    artutils (>= 0.8.0)
+Remotes:  
+		r-data-science/rpgconn,
+    r-data-science/rdstools,
+    artalytics/artcore,
+    artalytics/artutils
