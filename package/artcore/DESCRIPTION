@@ -1,0 +1,35 @@
+Package: artcore
+Title: Platform Core Tools
+Version: 0.7.1
+Authors@R: 
+    person(given = "Bobby",
+           family = "Fatemi",
+           role = c("aut", "cre"),
+           email = "bobby@artalytics.app")
+Description: Package containing core tools needed in the foundation of the artalytics platform code.
+License: file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
+URL: https://github.com/artalytics/artcore
+BugReports: https://github.com/artalytics/artcore/issues
+Config/testthat/edition: 3
+SystemRequirements: libpq (PostgreSQL client library)
+Imports:
+    paws.storage,
+    rdstools,
+    rpgconn,
+    httr,
+    fs,
+    stringr,
+    uuid,
+    paws
+Remotes:
+    r-data-science/rdstools,
+    r-data-science/rpgconn
+Depends: 
+  R (>= 4.1.0)
+Suggests:
+    covr,
+    testthat (>= 3.0.0),
+    withr
