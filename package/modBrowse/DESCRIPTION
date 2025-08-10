@@ -1,40 +1,37 @@
-Package: artBrowse
+Package: modBrowse
 Title: Browse Artworks
-Version: 0.1.6
+Version: 0.8.1
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
            role = c("aut", "cre"),
-           email = "bfatemi07@gmail.com")
-Description: Module for Artalytics app.
+           email = "bobby@artalytics.app")
+Description: Shiny Module for Artalytics Platform App.
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.1
-URL: https://github.com/r-data-science/artBrowse
-BugReports: https://github.com/r-data-science/artBrowse/issues
+RoxygenNote: 7.3.2
+URL: https://github.com/artalytics/modBrowse
+BugReports: https://github.com/artalytics/modBrowse/issues
 Config/testthat/edition: 3
 Imports:
-  rpgconn,
-  rdstools,
-  artutils,
-  shinyNextUI,
-  bs4Dash,
-  data.table,
-  fs,
-  lubridate,
-  scales,
-  shiny,
-  shiny.react,
-  shinyWidgets,
-  stringr
+    artutils,
+    shinyNextUI,
+    bs4Dash,
+    data.table,
+    scales,
+    shiny,
+    shiny.react,
+    shinyWidgets,
+    stringr,
+    shinyjs,
+    waiter
 Remotes:
   github::RinteRface/shinyNextUI,
-  github::r-data-science/rpgconn,
-  github::r-data-science/rdstools,
-  github::r-data-science/artutils
+  github::JohnCoene/waiter,
+  github::artalytics/artutils
 Depends: 
-  R (>= 4.0)
+  R (>= 4.1.0)
 Suggests:
   covr,
   testthat (>= 3.0.0)
