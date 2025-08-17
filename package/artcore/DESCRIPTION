@@ -1,6 +1,6 @@
 Package: artcore
 Title: Platform Core Tools
-Version: 0.7.4
+Version: 0.7.5
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -16,14 +16,16 @@ BugReports: https://github.com/artalytics/artcore/issues
 Config/testthat/edition: 3
 Imports:
     paws.storage,
-    rdstools,
     httr,
     fs,
     stringr,
     uuid,
-    paws
+    paws,
+    rdstools,
+    rpgconn
 Remotes:
-    r-data-science/rdstools
+    r-data-science/rdstools,
+    r-data-science/rpgconn
 Depends:
   R (>= 4.1.0)
 Suggests:
