@@ -1,6 +1,6 @@
 Package: artpipelines
 Title: Art Pipelines
-Version: 0.9.3
+Version: 0.9.4
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -46,6 +46,7 @@ Imports:
   utils
 Remotes:
   r-data-science/rdstools,
+  r-data-science/rpgconn,
   artalytics/artbenchmark,
   artalytics/artopenai,
   artalytics/artopensea,
@@ -55,6 +56,7 @@ Remotes:
 Depends: 
   R (>= 4.1.0)
 Suggests:
+  rpgconn,
   covr,
   tesseract,
   uuid,
