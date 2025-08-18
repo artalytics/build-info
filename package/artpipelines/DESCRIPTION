@@ -57,6 +57,7 @@ Depends:
   R (>= 4.1.0)
 Suggests:
   rpgconn,
+  paws.storage,
   covr,
   tesseract,
   uuid,
