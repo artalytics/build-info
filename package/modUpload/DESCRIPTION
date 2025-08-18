@@ -1,6 +1,6 @@
 Package: modUpload
 Title: Art Upload Module
-Version: 0.8.2
+Version: 0.8.3
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -32,7 +32,7 @@ Config/testthat/edition: 3
 Imports:
     artutils,
     pixelsense,
-    artpipelines (>= 0.9.8),
+    artpipelines,
     shinyNextUI,
     shiny,
     shinyalert,
@@ -56,7 +56,7 @@ Remotes:
   github::artalytics/artcore,
   github::artalytics/artutils,
   github::artalytics/pixelsense,
-  github::artalytics/artpipelines@fix/major-uuid-bug,
+  github::artalytics/artpipelines,
   github::r-data-science/rdstools,
   github::RinteRface/shinyNextUI,
   github::JohnCoene/waiter
