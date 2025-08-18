@@ -22,8 +22,8 @@ Imports:
     modBrowse,
     modFrames,
     modGallery,
-    modUpload,
-    artpipelines,
+    modUpload (>= 0.8.2),
+    artpipelines (>= 0.9.8),
     bs4Dash,
     shiny,
     shinyjs,
@@ -40,9 +40,9 @@ Remotes:
   artalytics/modGallery,
   artalytics/modUpload,
   artalytics/modBrowse,
-  artalytics/artpipelines
+  artalytics/artpipelines@fix/major-uuid-bug
 Depends: 
-  R (>= 4.0)
+  R (>= 4.1.0)
 Suggests: 
   shinytest2,
   covr,
