@@ -1,6 +1,6 @@
 Package: appPlatform
 Title: Artalytics App
-Version: 0.7.1
+Version: 0.8.1
 Authors@R: 
   person(
     given = "Bobby", 
