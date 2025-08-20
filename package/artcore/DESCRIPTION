@@ -1,6 +1,6 @@
 Package: artcore
 Title: Platform Core Tools
-Version: 0.8.1
+Version: 0.8.4
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -22,7 +22,8 @@ Imports:
     uuid,
     paws,
     rdstools,
-    rpgconn
+    rpgconn,
+    scales
 Remotes:
     r-data-science/rdstools,
     r-data-science/rpgconn
