@@ -29,14 +29,13 @@ Imports:
     shinyjs,
     waiter,
     lubridate,
-    scales,
     fs,
     htmltools
 Remotes:
   JohnCoene/waiter,
   artalytics/artcore,
-  artalytics/modFrames,
   artalytics/artutils,
+  artalytics/modFrames,
   artalytics/modGallery,
   artalytics/modUpload,
   artalytics/modBrowse,
