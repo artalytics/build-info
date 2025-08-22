@@ -1,6 +1,6 @@
 Package: modBrowse
 Title: Browse Artworks
-Version: 0.8.4
+Version: 0.8.5
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
