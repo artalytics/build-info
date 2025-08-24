@@ -17,20 +17,19 @@ URL: https://github.com/artalytics/appPlatform
 BugReports: https://github.com/artalytics/appPlatform/issues
 Config/testthat/edition: 3
 Imports:
-    artcore,
-    artutils,
-    modBrowse,
-    modFrames,
-    modGallery,
-    modUpload,
-    artpipelines,
-    bs4Dash,
-    shiny,
-    shinyjs,
-    waiter,
-    lubridate,
-    fs,
-    htmltools
+  artcore,
+  artutils,
+  modBrowse,
+  modFrames,
+  modGallery,
+  modUpload,
+  artpipelines,
+  bs4Dash,
+  shiny,
+  shinyjs,
+  waiter,
+  lubridate,
+  htmltools
 Remotes:
   JohnCoene/waiter,
   artalytics/artcore,
