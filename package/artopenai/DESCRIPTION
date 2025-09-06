@@ -1,6 +1,6 @@
 Package: artopenai
 Title: OpenAI Toolkit
-Version: 0.7.7
+Version: 0.8.1
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -30,8 +30,7 @@ Imports:
 Remotes:
   github::artalytics/artcore,
   github::artalytics/artutils,
-  github::r-data-science/rdstools,
-  github::r-data-science/rpgconn
+  github::r-data-science/rdstools
 Depends: 
   R (>= 4.1.0)
 Suggests:
