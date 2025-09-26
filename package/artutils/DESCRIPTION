@@ -10,7 +10,7 @@ Description: Package containing tools and data shared across the modules of the 
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 URL: https://github.com/artalytics/artutils
 BugReports: https://github.com/artalytics/artutils/issues
 SystemRequirements: ImageMagick++ (libmagick++-dev)
