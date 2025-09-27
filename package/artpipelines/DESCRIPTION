@@ -1,6 +1,6 @@
 Package: artpipelines
 Title: Art Pipelines
-Version: 0.9.8
+Version: 0.9.9
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -10,10 +10,10 @@ Description: Pipelines that generate data needed by the Artalytics platform.
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 URL: https://github.com/artalytics/artpipelines
 BugReports: https://github.com/artalytics/artpipelines/issues
-SystemRequirements:  
+SystemRequirements: 
   ImageMagick++ (libmagick++-dev),  
   FFmpeg/libavfilter (libavfilter-dev),  
   Archive (libarchive-dev),  
@@ -57,14 +57,18 @@ Depends:
   R (>= 4.1.0)
 Suggests:
   rpgconn,
+  qpdf,
   paws.storage,
   covr,
   tesseract,
   uuid,
   withr,
   gifski,
+  knitr,
+  rmarkdown,
   testthat (>= 3.0.0),
   rvest,
   httr2,
   xml2,
   webfakes
+VignetteBuilder: knitr
