@@ -1,26 +1,26 @@
 Package: artsend
-Title: artsend
-Version: 0.0.1
-Authors@R: 
+Title: Email Sending Integration via Resend API
+Version: 0.1.0
+Authors@R:
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
-Description: artsend
+Description: Provides email sending functionality for the Artalytics platform
+    using the Resend API. Pure email service integration without database
+    dependencies. Enables contact forms, notifications, and transactional
+    messaging with professional HTML templates.
 License: file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 URL: https://github.com/artalytics/artsend
 BugReports: https://github.com/artalytics/artsend/issues
 Config/testthat/edition: 3
-Imports: 
-	rdstools (>= 0.2.2),
-    rpgconn (>= 0.3.1),
-    artcore (>= 0.7.1),
-    artutils (>= 0.8.0)
-Remotes:  
-	r-data-science/rpgconn,
-    r-data-science/rdstools,
-    artalytics/artcore,
-    artalytics/artutils
-Suggests: 
+Imports:
+    httr2,
+    jsonlite,
+    glue,
+    htmltools
+Suggests:
     testthat (>= 3.0.0),
-    covr
+    covr,
+    mockery,
+    withr
