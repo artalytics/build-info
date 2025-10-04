@@ -1,6 +1,6 @@
 Package: modFrames
 Title: Art Explore Module
-Version: 0.7.3
+Version: 0.7.8
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -10,7 +10,7 @@ Description: Module for Artalytics Shiny App.
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 URL: https://github.com/artalytics/modFrames
 BugReports: https://github.com/artalytics/modFrames/issues
 SystemRequirements: ImageMagick++ (libmagick++-dev)
@@ -22,14 +22,11 @@ Imports:
   magick,
   scales,
   shiny,
-  shinyjs,
   shinyWidgets,
   stats,
   stringr,
-  waiter,
   artutils
 Remotes:
-  github::JohnCoene/waiter,
   github::artalytics/artutils
 Depends: 
   R (>= 4.1.0)
