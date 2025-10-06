@@ -1,15 +1,17 @@
-Package: {r-package}
-Title: {r-package-title}
-Version: 0.0.1
-Authors@R: 
+Package: artauth
+Title: Authentication and Access Control for Artalytics Platform
+Version: 0.1.0
+Authors@R:
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
-Description: {r-package-description}
+Description: Provides authentication services, user account management, role-based
+    access control, and lead capture functionality for the Artalytics platform.
+    Implements passwordless authentication via magic links sent through the Resend API.
 License: file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-URL: https://github.com/artalytics/{r-package}
-BugReports: https://github.com/artalytics/{r-package}/issues
+URL: https://github.com/artalytics/artauth
+BugReports: https://github.com/artalytics/artauth/issues
 Config/testthat/edition: 3
 Imports: 
 	rdstools (>= 0.2.2),
