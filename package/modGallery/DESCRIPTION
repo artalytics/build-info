@@ -1,6 +1,6 @@
 Package: modGallery
 Title: Art Gallery Shiny Module
-Version: 0.8.8
+Version: 0.8.9
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
