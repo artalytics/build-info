@@ -1,6 +1,6 @@
 Package: modGallery
 Title: Art Gallery Shiny Module
-Version: 0.8.9
+Version: 0.8.11
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -21,10 +21,9 @@ Imports:
     artsend,
     pixelsense,
     shinyNextUI,
-    bs4Dash,
+    bslib (>= 0.9.0),
     data.table,
     flexdashboard,
-    htmltools,
     lubridate,
     scales,
     shiny,
