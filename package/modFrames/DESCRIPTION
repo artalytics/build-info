@@ -1,6 +1,6 @@
 Package: modFrames
 Title: Art Explore Module
-Version: 0.7.8
+Version: 0.7.9
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -16,15 +16,13 @@ BugReports: https://github.com/artalytics/modFrames/issues
 SystemRequirements: ImageMagick++ (libmagick++-dev)
 Config/testthat/edition: 3
 Imports:
-  bs4Dash,
+  bslib (>= 0.9.0),
   data.table,
-  fs,
   magick,
   scales,
   shiny,
   shinyWidgets,
   stats,
-  stringr,
   artutils
 Remotes:
   github::artalytics/artutils
