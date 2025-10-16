@@ -27,7 +27,7 @@ SystemRequirements:
     Fortran compiler (gfortran)
 Config/testthat/edition: 3
 Imports:
-    artutils,
+    artutils (>= 0.12),
     artcore,
     data.table,
     fs,
