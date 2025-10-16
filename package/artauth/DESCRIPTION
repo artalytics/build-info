@@ -1,6 +1,6 @@
 Package: artauth
 Title: Authentication and Access Control for Artalytics Platform
-Version: 0.1.0
+Version: 0.1.2
 Authors@R:
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
 Description: Provides authentication services, user account management, role-based
@@ -13,6 +13,16 @@ RoxygenNote: 7.3.3
 URL: https://github.com/artalytics/artauth
 BugReports: https://github.com/artalytics/artauth/issues
 Config/testthat/edition: 3
-Suggests: 
+Imports:
+    rpgconn,
+    rdstools,
+    DBI,
+    digest,
+    openssl,
+    checkmate
+Remotes:
+    r-data-science/rpgconn,
+    r-data-science/rdstools
+Suggests:
     testthat (>= 3.0.0),
     covr
