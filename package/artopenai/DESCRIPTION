@@ -1,6 +1,6 @@
 Package: artopenai
 Title: OpenAI Toolkit
-Version: 0.8.1
+Version: 0.8.5
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -10,7 +10,7 @@ Description: Artwork Tools from OpenAI.
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 URL: https://github.com/artalytics/artopenai
 BugReports: https://github.com/artalytics/artopenai/issues
 SystemRequirements: ImageMagick++ (libmagick++-dev)
@@ -19,23 +19,16 @@ Imports:
     base64enc,
     data.table,
     fs,
+    glue,
     httr2,
     jsonlite,
-    lubridate,
     magick,
-    stringr,
-    tidyjson,
-    artcore,
-    artutils
-Remotes:
-  github::artalytics/artcore,
-  github::artalytics/artutils,
-  github::r-data-science/rdstools
+    readr,
+    jsonvalidate,
+    stringr
 Depends: 
   R (>= 4.1.0)
 Suggests:
-  DBI,
   covr,
-  rdstools,
-  rpgconn,
+  withr,
   testthat (>= 3.0.0)
