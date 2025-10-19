@@ -71,25 +71,11 @@ jobs:
 
             # Update draft PR badge JSON
             draft_file="pr-draft-${package}.json"
-            cat > "$draft_file" <<EOF
-{
-  "schemaVersion": 1,
-  "label": "draft",
-  "message": "${draft_count}",
-  "color": "yellow"
-}
-EOF
+            printf '{\n  "schemaVersion": 1,\n  "label": "draft",\n  "message": "%s",\n  "color": "yellow"\n}\n' "$draft_count" > "$draft_file"
 
             # Update ready PR badge JSON
             ready_file="pr-ready-${package}.json"
-            cat > "$ready_file" <<EOF
-{
-  "schemaVersion": 1,
-  "label": "ready",
-  "message": "${ready_count}",
-  "color": "green"
-}
-EOF
+            printf '{\n  "schemaVersion": 1,\n  "label": "ready",\n  "message": "%s",\n  "color": "green"\n}\n' "$ready_count" > "$ready_file"
 
             echo "  Draft PRs: $draft_count, Ready PRs: $ready_count"
           done
