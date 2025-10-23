@@ -1,6 +1,6 @@
 Package: artutils
 Title: Artalytics Toolkit
-Version: 0.12.4
+Version: 0.12.6
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -27,16 +27,13 @@ Imports:
   shiny,
   stats,
   stringr,
-  tidyjson,
   artcore
 Remotes:
   r-data-science/rdstools,
-  r-data-science/rpgconn,
   artalytics/artcore
 Depends: 
   R (>= 4.1.0)
 Suggests:
   covr,
-  rpgconn,
   testthat (>= 3.0.0),
   uuid
