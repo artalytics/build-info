@@ -1,7 +1,7 @@
 Package: modGallery
 Title: Art Gallery Shiny Module
-Version: 0.8.11
-Authors@R: 
+Version: 0.9.0
+Authors@R:
     person(given = "Bobby",
            family = "Fatemi",
            role = c("aut", "cre"),
@@ -18,6 +18,7 @@ Imports:
     rdstools,
     artopensea,
     artutils,
+    artshiny,
     artsend,
     pixelsense,
     shinyNextUI,
@@ -37,11 +38,12 @@ Remotes:
   github::artalytics/artopensea,
   github::artalytics/artutils,
   github::artalytics/artcore,
+  github::artalytics/artshiny,
   github::artalytics/artsend,
   github::artalytics/pixelsense,
   github::RinteRface/shinyNextUI,
   github::JohnCoene/waiter
-Depends: 
+Depends:
   R (>= 4.1.0)
 Suggests:
   fs,
