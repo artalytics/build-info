@@ -1,6 +1,6 @@
 Package: artshiny
 Title: Shared Shiny UI Components
-Version: 0.1.0
+Version: 0.1.1
 Authors@R:
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
 Description: Provides reusable Shiny UI components and helpers for the Artalytics
@@ -17,7 +17,6 @@ Config/testthat/edition: 3
 Imports:
     artcore (>= 0.9.0),
     shiny,
-    waiter,
     rdstools
 Remotes:
     r-data-science/rdstools,
