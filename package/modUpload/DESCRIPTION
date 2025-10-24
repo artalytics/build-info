@@ -1,6 +1,6 @@
 Package: modUpload
 Title: Art Upload Module
-Version: 0.8.4
+Version: 0.8.5
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -31,6 +31,7 @@ SystemRequirements:
 Config/testthat/edition: 3
 Imports:
     artutils,
+    artshiny,
     pixelsense,
     artpipelines,
     shiny,
@@ -56,6 +57,7 @@ Imports:
 Remotes:
   github::artalytics/artcore,
   github::artalytics/artutils,
+  github::artalytics/artshiny,
   github::artalytics/pixelsense,
   github::artalytics/artpipelines,
   github::r-data-science/rdstools,
