@@ -70,3 +70,4 @@ Suggests:
   xml2,
   webfakes
 VignetteBuilder: knitr
+
