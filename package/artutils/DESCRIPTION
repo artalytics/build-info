@@ -1,7 +1,7 @@
 Package: artutils
 Title: Artalytics Toolkit
-Version: 0.12.6
-Authors@R: 
+Version: 0.13.0
+Authors@R:
     person(given = "Bobby",
            family = "Fatemi",
            role = c("aut", "cre"),
@@ -31,7 +31,7 @@ Imports:
 Remotes:
   r-data-science/rdstools,
   artalytics/artcore
-Depends: 
+Depends:
   R (>= 4.1.0)
 Suggests:
   covr,
