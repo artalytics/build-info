@@ -1,6 +1,6 @@
 Package: artpipelines
 Title: Art Pipelines
-Version: 0.10.1
+Version: 0.10.2
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -23,7 +23,7 @@ Imports:
   artopenai,
   artopensea,
   artcore,
-  artutils,
+  artutils (>= 0.12.4),
   pixelsense,
   rdstools,
   av,
