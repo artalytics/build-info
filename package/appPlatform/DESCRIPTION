@@ -1,6 +1,6 @@
 Package: appPlatform
 Title: Artalytics App
-Version: 0.8.3
+Version: 0.8.4
 Authors@R: 
   person(
     given = "Bobby", 
@@ -19,11 +19,12 @@ Config/testthat/edition: 3
 Imports:
     artcore,
     artutils,
+    artshiny,
     modBrowse,
     modFrames,
     modGallery,
     modUpload,
-    artpipelines,
+    artpipelines (>= 0.10.2),
     bslib,
     shiny,
     shinyjs,
@@ -35,6 +36,7 @@ Remotes:
   r-data-science/rdstools,
   artalytics/artcore,
   artalytics/artutils,
+  artalytics/artshiny,
   artalytics/modFrames,
   artalytics/modGallery,
   artalytics/modUpload,
