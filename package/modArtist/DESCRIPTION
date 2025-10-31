@@ -1,9 +1,11 @@
 Package: modArtist
-Title: TBD
+Title: Artist Profile Module for Artalytics Platform
 Version: 0.0.1
-Authors@R: 
+Authors@R:
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
-Description: TBD.
+Description: Shiny module for displaying artist profile pages with featured artwork,
+    bio, collections overview, and recent works. Supports shareable URLs via artist
+    slugs and respects collection visibility settings from the artist settings system.
 License: file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -11,8 +13,17 @@ RoxygenNote: 7.3.3
 URL: https://github.com/artalytics/modArtist
 BugReports: https://github.com/artalytics/modArtist/issues
 Config/testthat/edition: 3
-Imports: 
-Remotes: 
-Suggests: 
-  testthat (>= 3.0.0),
-  covr
+Imports:
+    artcore,
+    artutils,
+    artshiny,
+    shiny,
+    shinyjs,
+    waiter
+Remotes:
+    artalytics/artcore,
+    artalytics/artutils,
+    artalytics/artshiny
+Suggests:
+    testthat (>= 3.0.0),
+    covr
