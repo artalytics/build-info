@@ -1,6 +1,6 @@
 Package: modBrowse
 Title: Browse Artworks
-Version: 0.8.7
+Version: 0.9.2
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -17,8 +17,9 @@ Config/testthat/edition: 3
 Imports:
     artcore,
     artutils,
+    artshiny,
     shinyNextUI,
-    bs4Dash,
+    bslib (>= 0.9.0),
     data.table,
     scales,
     shiny,
@@ -31,7 +32,8 @@ Remotes:
   github::RinteRface/shinyNextUI,
   github::JohnCoene/waiter,
   github::artalytics/artcore,
-  github::artalytics/artutils
+  github::artalytics/artutils,
+  github::artalytics/artshiny
 Depends: 
   R (>= 4.1.0)
 Suggests:

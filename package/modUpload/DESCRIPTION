@@ -1,6 +1,6 @@
 Package: modUpload
 Title: Art Upload Module
-Version: 0.8.3
+Version: 0.8.5
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -10,10 +10,10 @@ Description: Module for Artalytics shiny app.
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 URL: https://github.com/artalytics/modUpload
 BugReports: https://github.com/artalytics/modUpload/issues
-SystemRequirements:  
+SystemRequirements: 
   ImageMagick++ (libmagick++-dev),  
   FFmpeg/libavfilter (libavfilter-dev),  
   Archive (libarchive-dev),  
@@ -31,15 +31,15 @@ SystemRequirements:
 Config/testthat/edition: 3
 Imports:
     artutils,
+    artshiny,
     pixelsense,
     artpipelines,
-    shinyNextUI,
     shiny,
     shinyalert,
     shinyjs,
     shinyvalidate,
     shinyWidgets,
-    bs4Dash,
+    bslib (>= 0.9.0),
     waiter,
     collapse,
     data.table,
@@ -51,14 +51,16 @@ Imports:
     artcore,
     lubridate,
     utils,
-    rdstools
+    rdstools,
+    DBI,
+    htmltools
 Remotes:
   github::artalytics/artcore,
   github::artalytics/artutils,
+  github::artalytics/artshiny,
   github::artalytics/pixelsense,
   github::artalytics/artpipelines,
   github::r-data-science/rdstools,
-  github::RinteRface/shinyNextUI,
   github::JohnCoene/waiter
 Depends: 
   R (>= 4.1.0)

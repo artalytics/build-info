@@ -1,0 +1,97 @@
+name: Update PR Count Badges
+
+on:
+  schedule:
+    # Run every 15 minutes
+    - cron: '*/15 * * * *'
+  workflow_dispatch: # Allow manual triggering
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/update-pr-badges.yaml'
+
+jobs:
+  update-badges:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update PR count badges
+        id: update-badges
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          #!/bin/bash
+          set -e
+
+          # Define all packages
+          packages=(
+            "appAdmin"
+            "appPlatform"
+            "artauth"
+            "artbenchmark"
+            "artcore"
+            "artopenai"
+            "artopensea"
+            "artpipelines"
+            "artsend"
+            "artutils"
+            "modArtist"
+            "modBrowse"
+            "modFrames"
+            "modGallery"
+            "modUpload"
+            "pixelsense"
+            "pixelsense2"
+          )
+
+          # Track if any files changed
+          changes_made=false
+
+          for package in "${packages[@]}"; do
+            echo "Processing $package..."
+
+            # Get all open PRs for this repo
+            pr_data=$(gh pr list \
+              --repo "artalytics/$package" \
+              --state open \
+              --json isDraft \
+              --limit 100 2>/dev/null || echo "[]")
+
+            # Count draft and ready PRs
+            draft_count=$(echo "$pr_data" | jq '[.[] | select(.isDraft == true)] | length')
+            ready_count=$(echo "$pr_data" | jq '[.[] | select(.isDraft == false)] | length')
+
+            # Update draft PR badge JSON
+            draft_file="pr-draft-${package}.json"
+            printf '{\n  "schemaVersion": 1,\n  "label": "draft",\n  "message": "%s",\n  "color": "yellow"\n}\n' "$draft_count" > "$draft_file"
+
+            # Update ready PR badge JSON
+            ready_file="pr-ready-${package}.json"
+            printf '{\n  "schemaVersion": 1,\n  "label": "ready",\n  "message": "%s",\n  "color": "green"\n}\n' "$ready_count" > "$ready_file"
+
+            echo "  Draft PRs: $draft_count, Ready PRs: $ready_count"
+          done
+
+          # Check if any files changed
+          if [[ -n $(git status --porcelain) ]]; then
+            changes_made=true
+          fi
+
+          echo "changes_made=$changes_made" >> $GITHUB_OUTPUT
+
+      - name: Commit and push if changed
+        if: steps.update-badges.outputs.changes_made == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pr-draft-*.json pr-ready-*.json
+          git commit -m "chore: update PR count badges [skip ci]"
+          git push
