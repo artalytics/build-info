@@ -14,14 +14,15 @@ URL: https://github.com/artalytics/artauth
 BugReports: https://github.com/artalytics/artauth/issues
 Config/testthat/edition: 3
 Imports:
-    rpgconn,
+    artcore,
     rdstools,
     DBI,
     digest,
     openssl,
-    checkmate
+    checkmate,
+    uuid
 Remotes:
-    r-data-science/rpgconn,
+    artalytics/artcore,
     r-data-science/rdstools
 Suggests:
     testthat (>= 3.0.0),
