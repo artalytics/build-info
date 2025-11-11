@@ -1,6 +1,6 @@
 Package: modArtist
 Title: Artist Profile Module for Artalytics Platform
-Version: 0.0.1
+Version: 0.0.7
 Authors@R:
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
 Description: Shiny module for displaying artist profile pages with featured artwork,
@@ -16,14 +16,24 @@ Config/testthat/edition: 3
 Imports:
     artcore,
     artutils,
-    artshiny,
+    fs,
+    rlang,
     shiny,
     shinyjs,
-    waiter
+    waiter,
+    utils,
+    DBI,
+    data.table,
+    jsonlite
 Remotes:
     artalytics/artcore,
     artalytics/artutils,
-    artalytics/artshiny
+    artalytics/artshiny,
+    JohnCoene/waiter
 Suggests:
     testthat (>= 3.0.0),
-    covr
+    covr,
+    artshiny,
+    htmltools
+Depends:
+    R (>= 4.1.0)
