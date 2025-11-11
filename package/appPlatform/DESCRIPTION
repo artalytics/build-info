@@ -1,6 +1,6 @@
 Package: appPlatform
 Title: Artalytics App
-Version: 0.8.4
+Version: 0.9.1
 Authors@R: 
   person(
     given = "Bobby", 
@@ -20,6 +20,7 @@ Imports:
     artcore,
     artutils,
     artshiny,
+    modArtist,
     modBrowse,
     modFrames,
     modGallery,
@@ -30,13 +31,15 @@ Imports:
     shinyjs,
     waiter,
     htmltools,
-    rdstools
+    rdstools,
+    DBI
 Remotes:
   JohnCoene/waiter,
   r-data-science/rdstools,
   artalytics/artcore,
   artalytics/artutils,
   artalytics/artshiny,
+  artalytics/modArtist,
   artalytics/modFrames,
   artalytics/modGallery,
   artalytics/modUpload,
