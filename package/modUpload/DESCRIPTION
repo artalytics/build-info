@@ -1,6 +1,6 @@
 Package: modUpload
 Title: Art Upload Module
-Version: 0.8.5
+Version: 0.9.1
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
