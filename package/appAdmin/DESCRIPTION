@@ -1,26 +1,35 @@
-Package: {r-package}
-Title: {r-package-title}
-Version: 0.0.1
-Authors@R: 
+Package: appAdmin
+Title: Internal Admin Dashboard for Artalytics Platform
+Version: 0.1.0
+Authors@R:
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
-Description: {r-package-description}
+Description: Internal administrative dashboard for managing artist waiting lists,
+    whitepaper downloads, lead tracking, and user management for the Artalytics
+    platform. Provides monitoring and analytics tools for the pilot program.
 License: file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
-URL: https://github.com/artalytics/{r-package}
-BugReports: https://github.com/artalytics/{r-package}/issues
+RoxygenNote: 7.3.3
+URL: https://github.com/artalytics/appAdmin
+BugReports: https://github.com/artalytics/appAdmin/issues
 Config/testthat/edition: 3
-Imports: 
-	rdstools (>= 0.2.2),
-    rpgconn (>= 0.3.1),
+Imports:
+    shiny (>= 1.7.0),
+    bslib (>= 0.5.0),
+    bsicons (>= 0.1.0),
+    DT (>= 0.28),
+    ggplot2 (>= 3.4.0),
+    plotly (>= 4.10.0),
+    lubridate (>= 1.9.0),
+    rdstools (>= 0.2.2),
     artcore (>= 0.7.1),
-    artutils (>= 0.8.0)
-Remotes:  
-	r-data-science/rpgconn,
+    artauth (>= 0.1.0),
+    stats,
+    utils
+Remotes:
     r-data-science/rdstools,
     artalytics/artcore,
-    artalytics/artutils
-Suggests: 
+    artalytics/artauth
+Suggests:
     testthat (>= 3.0.0),
     covr
