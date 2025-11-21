@@ -1,6 +1,6 @@
 Package: artcurator
 Title: Art Curation and Analysis Tools
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
 Description: Tools for curating and analyzing art collections, including metadata management, image analysis, and collection insights.
@@ -12,7 +12,13 @@ URL: https://github.com/artalytics/artcurator
 BugReports: https://github.com/artalytics/artcurator/issues
 Config/testthat/edition: 3
 Imports: 
-Remotes: 
+  data.table,
+  stringr
+Remotes:
+  artalytics/artcore,
+  artalytics/artutils
 Suggests: 
   testthat (>= 3.0.0),
-  covr
+  covr,
+  artcore,
+  artutils
