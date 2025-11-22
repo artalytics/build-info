@@ -13,7 +13,9 @@ BugReports: https://github.com/artalytics/artcurator/issues
 Config/testthat/edition: 3
 Imports: 
   data.table,
-  stringr
+  stringr,
+  DBI,
+  jsonlite
 Remotes:
   artalytics/artcore,
   artalytics/artutils
