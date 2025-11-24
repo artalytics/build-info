@@ -1,6 +1,6 @@
 Package: artgemini
 Title: Google Gemini Toolkit
-Version: 0.0.1
+Version: 0.1.0
 Authors@R: 
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
 Description: Helpers for working with Google's Gemini models inside the Artalytics platform.
@@ -20,7 +20,9 @@ Imports:
     httr2,
     jsonlite,
     magick,
+    rdstools,
     stringr
 Suggests:
     covr,
+    withr,
     testthat (>= 3.0.0)
