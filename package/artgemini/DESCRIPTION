@@ -1,18 +1,26 @@
-Package: {r-package}
-Title: {r-package-title}
+Package: artgemini
+Title: Google Gemini Toolkit
 Version: 0.0.1
 Authors@R: 
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
-Description: {r-package-description}
+Description: Helpers for working with Google's Gemini models inside the Artalytics platform.
 License: file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
-URL: https://github.com/artalytics/{r-package}
-BugReports: https://github.com/artalytics/{r-package}/issues
+URL: https://github.com/artalytics/artgemini
+BugReports: https://github.com/artalytics/artgemini/issues
 Config/testthat/edition: 3
-Imports: 
-Remotes: 
-Suggests: 
-  testthat (>= 3.0.0),
-  covr
+Depends:
+    R (>= 4.1.0)
+Imports:
+    base64enc,
+    fs,
+    glue,
+    httr2,
+    jsonlite,
+    magick,
+    stringr
+Suggests:
+    covr,
+    testthat (>= 3.0.0)
