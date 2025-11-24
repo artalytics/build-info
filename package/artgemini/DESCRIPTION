@@ -26,3 +26,5 @@ Suggests:
     covr,
     withr,
     testthat (>= 3.0.0)
+Remotes:
+    r-data-science/rdstools
