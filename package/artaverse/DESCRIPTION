@@ -52,6 +52,7 @@ Suggests:
     artsend,
     covr,
     knitr,
+    pak,
     pixelsense,
     rmarkdown,
     testthat (>= 3.0.0)
