@@ -1,18 +1,58 @@
-Package: {r-package}
-Title: {r-package-title}
+Package: artaverse
+Title: Meta-Package for the Artalytics Platform
 Version: 0.0.1
 Authors@R: 
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
-Description: {r-package-description}
+Description: Umbrella package that installs and attaches the core Artalytics 
+    platform packages. Designed for easy environment setup and interactive use.
+    This package should not be used as a dependency in other Artalytics packages;
+    instead, packages should depend on the specific components they require.
 License: file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
-URL: https://github.com/artalytics/{r-package}
-BugReports: https://github.com/artalytics/{r-package}/issues
+URL: https://github.com/artalytics/artaverse
+BugReports: https://github.com/artalytics/artaverse/issues
 Config/testthat/edition: 3
-Imports: 
-Remotes: 
-Suggests: 
-  testthat (>= 3.0.0),
-  covr
+Depends:
+    R (>= 4.1.0)
+Imports:
+    appPlatform,
+    artauth,
+    artcore,
+    artshiny,
+    artutils,
+    crayon,
+    data.table,
+    modArtist,
+    modBrowse,
+    modFrames,
+    modGallery,
+    modUpload,
+    utils
+Remotes:
+    artalytics/appPlatform,
+    artalytics/artauth,
+    artalytics/artcore,
+    artalytics/artshiny,
+    artalytics/artutils,
+    artalytics/modArtist,
+    artalytics/modBrowse,
+    artalytics/modFrames,
+    artalytics/modGallery,
+    artalytics/modUpload
+Suggests:
+    artbenchmark,
+    artcurator,
+    artgemini,
+    arthelpers,
+    artopenai,
+    artopensea,
+    artpipelines,
+    artsend,
+    covr,
+    knitr,
+    pixelsense,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
