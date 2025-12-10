@@ -43,15 +43,6 @@ Remotes:
     artalytics/modGallery,
     artalytics/modUpload
 Suggests:
-    artbenchmark,
-    artcurator,
-    artgemini,
-    arthelpers,
-    artopenai,
-    artopensea,
-    artpipelines,
-    artpixeltrace,
-    artsend,
     covr,
     knitr,
     pak,
