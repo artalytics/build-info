@@ -1,6 +1,6 @@
 Package: artgemini
 Title: Google Gemini Toolkit
-Version: 0.1.6
+Version: 0.1.7
 Authors@R: 
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
 Description: Helpers for working with Google's Gemini models inside the Artalytics platform.
