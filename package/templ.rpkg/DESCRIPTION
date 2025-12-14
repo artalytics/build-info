@@ -12,7 +12,11 @@ URL: https://github.com/artalytics/templ.rpkg
 BugReports: https://github.com/artalytics/templ.rpkg/issues
 Config/testthat/edition: 3
 Imports: 
+	rdstools
 Remotes: 
+	artalytics/arthelpers,
+	r-data-science/rdstools
 Suggests: 
   testthat (>= 3.0.0),
+  arthelpers,
   covr
