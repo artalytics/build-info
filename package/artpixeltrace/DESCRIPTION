@@ -1,0 +1,58 @@
+Package: artpixeltrace
+Title: PixelTrace
+Version: 0.8.6
+Authors@R: 
+  person(
+    given = "Bobby", 
+    family = "Fatemi", 
+    role = c("aut", "cre"), 
+    email = "bobby@artalytics.app"
+  )
+Description: PixelTrace Verification.
+License: file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.3
+URL: https://github.com/artalytics/artpixeltrace
+BugReports: https://github.com/artalytics/artpixeltrace/issues
+SystemRequirements: 
+    ImageMagick++ (libmagick++-dev),  
+    Armadillo (libarmadillo-dev),  
+    BLAS/LAPACK (libblas-dev, liblapack-dev),  
+    ARPACK (libarpack++2-dev),  
+    FFTW3 (libfftw3-dev),  
+    JPEG (libjpeg-dev),  
+    PNG (libpng-dev),  
+    TIFF (libtiff5-dev),  
+    Fortran compiler (gfortran)
+Config/testthat/edition: 3
+Imports:
+    artutils (>= 0.12),
+    artcore,
+    data.table,
+    fs,
+    httr2,
+    lubridate,
+    magick,
+    OpenImageR,
+    rdstools,
+    scales,
+    shiny,
+    shinyNextUI,
+    stringr,
+    tinytex,
+    waiter,
+    zip,
+    utils
+Remotes:
+  artalytics/artutils,
+  artalytics/artcore,
+  r-data-science/rdstools,
+  RinteRface/shinyNextUI
+Depends:
+  R (>= 4.1.0)
+Suggests: 
+  testthat (>= 3.0.0),
+  knitr,
+  shiny.react,
+  pdftools
