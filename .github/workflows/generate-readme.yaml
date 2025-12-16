@@ -52,13 +52,12 @@ jobs:
             local desc="$3"
             local codecov="$4"
 
-            # Get version from DESCRIPTION if available
-            local version=$(get_desc_field "$name" "Version")
-            local repo_name=$(echo "$repo" | cut -d'/' -f2)
+            # Base URL for custom badge endpoints
+            local badge_base="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/artalytics/build-info/main/badges"
 
-            # Build the row
+            # Build the row using custom badge endpoints for public visibility
             cat << EOF
-          | [**${name}**](https://github.com/${repo})<br><sub>${desc}</sub> | ![Version](https://img.shields.io/github/r-package/v/artalytics/build-info?filename=package%2F${name}%2FDESCRIPTION&style=flat&color=%231c98e3)<br>[![issues](https://img.shields.io/github/issues/${repo})](https://github.com/${repo}/issues) | [![R-CMD-check](https://github.com/${repo}/actions/workflows/R-CMD-check.yaml/badge.svg?branch=main)](https://github.com/${repo}/actions/workflows/R-CMD-check.yaml)<br>[![lint](https://github.com/${repo}/actions/workflows/lint.yaml/badge.svg?branch=main)](https://github.com/${repo}/actions/workflows/lint.yaml) | [![codecov](https://codecov.io/gh/${repo}/branch/main/graph/badge.svg${codecov:+?token=$codecov})](https://codecov.io/gh/${repo})<br>[![test-coverage](https://github.com/${repo}/actions/workflows/test-coverage.yaml/badge.svg?branch=main)](https://github.com/${repo}/actions/workflows/test-coverage.yaml) | [![draft](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/artalytics/build-info/main/badges/pr-draft-${name}.json)](https://github.com/${repo}/pulls?q=is:pr+is:open+draft:true)<br>[![ready](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/artalytics/build-info/main/badges/pr-ready-${name}.json)](https://github.com/${repo}/pulls?q=is:pr+is:open+draft:false) |
+          | [**${name}**](https://github.com/${repo})<br><sub>${desc}</sub> | ![Version](https://img.shields.io/github/r-package/v/artalytics/build-info?filename=package%2F${name}%2FDESCRIPTION&style=flat&color=%231c98e3)<br>[![issues](${badge_base}/issues-${name}.json)](https://github.com/${repo}/issues) | [![R-CMD-check](${badge_base}/r-cmd-check-${name}.json)](https://github.com/${repo}/actions/workflows/R-CMD-check.yaml)<br>[![lint](${badge_base}/lint-${name}.json)](https://github.com/${repo}/actions/workflows/lint.yaml) | [![codecov](https://codecov.io/gh/${repo}/branch/main/graph/badge.svg${codecov:+?token=$codecov})](https://codecov.io/gh/${repo})<br>[![coverage](${badge_base}/test-coverage-${name}.json)](https://github.com/${repo}/actions/workflows/test-coverage.yaml) | [![draft](${badge_base}/pr-draft-${name}.json)](https://github.com/${repo}/pulls?q=is:pr+is:open+draft:true)<br>[![ready](${badge_base}/pr-ready-${name}.json)](https://github.com/${repo}/pulls?q=is:pr+is:open+draft:false) |
           EOF
           }
 

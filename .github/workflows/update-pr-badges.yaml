@@ -1,4 +1,4 @@
-name: Update PR Count Badges
+name: Update PR and Issue Badges
 
 on:
   schedule:
@@ -29,7 +29,7 @@ jobs:
           sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
           sudo chmod +x /usr/local/bin/yq
 
-      - name: Update PR count badges
+      - name: Update PR and issue badges
         id: update-badges
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
@@ -41,15 +41,11 @@ jobs:
           mkdir -p badges
 
           # Read packages from registry.yaml
-          # Extract name and repo for each package
           packages=$(yq e '.packages[] | .name + ":" + .repo' registry.yaml)
 
           echo "Found packages in registry:"
           echo "$packages"
           echo ""
-
-          # Track if any files changed
-          changes_made=false
 
           while IFS=: read -r pkg_name repo; do
             [ -z "$pkg_name" ] && continue
@@ -67,24 +63,42 @@ jobs:
             draft_count=$(echo "$pr_data" | jq '[.[] | select(.isDraft == true)] | length')
             ready_count=$(echo "$pr_data" | jq '[.[] | select(.isDraft == false)] | length')
 
-            # Update draft PR badge JSON (in badges/ directory)
-            draft_file="badges/pr-draft-${pkg_name}.json"
-            printf '{\n  "schemaVersion": 1,\n  "label": "draft",\n  "message": "%s",\n  "color": "yellow"\n}\n' "$draft_count" > "$draft_file"
+            # Get open issues count (excluding PRs)
+            issues_count=$(gh api "repos/${repo}/issues?state=open&per_page=1" \
+              --jq 'length' 2>/dev/null || echo "0")
+            # GitHub API returns issues + PRs, so get actual issue count
+            issues_count=$(gh api "repos/${repo}" --jq '.open_issues_count' 2>/dev/null || echo "0")
+            # Subtract open PRs to get just issues
+            total_prs=$((draft_count + ready_count))
+            issues_only=$((issues_count - total_prs))
+            [ $issues_only -lt 0 ] && issues_only=0
 
-            # Update ready PR badge JSON (in badges/ directory)
-            ready_file="badges/pr-ready-${pkg_name}.json"
-            printf '{\n  "schemaVersion": 1,\n  "label": "ready",\n  "message": "%s",\n  "color": "green"\n}\n' "$ready_count" > "$ready_file"
+            # Update draft PR badge
+            printf '{\n  "schemaVersion": 1,\n  "label": "draft",\n  "message": "%s",\n  "color": "yellow"\n}\n' "$draft_count" > "badges/pr-draft-${pkg_name}.json"
 
-            echo "  Draft PRs: $draft_count, Ready PRs: $ready_count"
+            # Update ready PR badge
+            printf '{\n  "schemaVersion": 1,\n  "label": "ready",\n  "message": "%s",\n  "color": "green"\n}\n' "$ready_count" > "badges/pr-ready-${pkg_name}.json"
+
+            # Update issues badge
+            if [ "$issues_only" -eq 0 ]; then
+              issues_color="brightgreen"
+            elif [ "$issues_only" -lt 5 ]; then
+              issues_color="yellow"
+            else
+              issues_color="orange"
+            fi
+            printf '{\n  "schemaVersion": 1,\n  "label": "issues",\n  "message": "%s",\n  "color": "%s"\n}\n' "$issues_only" "$issues_color" > "badges/issues-${pkg_name}.json"
+
+            echo "  Draft PRs: $draft_count, Ready PRs: $ready_count, Issues: $issues_only"
 
           done <<< "$packages"
 
           # Check if any files changed
           if [[ -n $(git status --porcelain) ]]; then
-            changes_made=true
+            echo "changes_made=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes_made=false" >> $GITHUB_OUTPUT
           fi
-
-          echo "changes_made=$changes_made" >> $GITHUB_OUTPUT
 
       - name: Commit and push if changed
         if: steps.update-badges.outputs.changes_made == 'true'
@@ -92,7 +106,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add badges/
-          git commit -m "chore: update PR count badges [skip ci]"
+          git commit -m "chore: update PR and issue badges [skip ci]"
           # Pull with rebase in case another workflow pushed (e.g., README generation)
           git pull --rebase origin main || true
           git push
