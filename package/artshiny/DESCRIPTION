@@ -23,6 +23,7 @@ Remotes:
     artalytics/artcore
 Suggests:
     testthat (>= 3.0.0),
-    covr
+    covr,
+    tinytex
 Depends:
     R (>= 4.1.0)
