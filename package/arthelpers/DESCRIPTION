@@ -1,6 +1,6 @@
 Package: arthelpers
 Title: Artalytics Developer Tools
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
 Description: Internal developer tools and utilities for Artalytics R package development.
@@ -8,7 +8,7 @@ License: file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
-URL: https://github.com/artalytics/arthelpers
+URL: https://docs.artalytics.dev/r/arthelpers, https://github.com/artalytics/arthelpers
 BugReports: https://github.com/artalytics/arthelpers/issues
 Config/testthat/edition: 3
 Imports:
@@ -23,6 +23,7 @@ Imports:
     httr2,
     data.table,
     stringr,
+    fs,
     utils
 Remotes:  
     artalytics/artcore
@@ -33,6 +34,12 @@ Suggests:
     testthat (>= 3.0.0),
     usethis,
     covr,
-    mockery
-Depends: 
+    mockery,
+    pkgdown,
+    openssl,
+    quarto,
+    knitr,
+    rmarkdown
+VignetteBuilder: quarto
+Depends:
     R (>= 4.1.0)
