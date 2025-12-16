@@ -1,7 +1,7 @@
 Package: artcore
 Title: Platform Core Tools
-Version: 1.1.0
-Authors@R: 
+Version: 1.2.0
+Authors@R:
     person(given = "Bobby",
            family = "Fatemi",
            role = c("aut", "cre"),
@@ -33,7 +33,8 @@ Depends:
 Suggests:
     covr,
     knitr,
+    quarto,
     rmarkdown,
     testthat (>= 3.0.0),
     withr
-VignetteBuilder: knitr
+VignetteBuilder: quarto
