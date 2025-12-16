@@ -169,6 +169,8 @@ jobs:
             echo "No changes to README.md"
           else
             git commit -m "docs: regenerate README from registry [skip ci]"
+            # Pull with rebase in case another workflow pushed (e.g., PR badges)
+            git pull --rebase origin main || true
             git push
             echo "README.md updated and pushed"
           fi
