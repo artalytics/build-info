@@ -1,6 +1,6 @@
 Package: artpipelines
 Title: Art Pipelines
-Version: 0.10.2
+Version: 0.11.0
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -23,8 +23,8 @@ Imports:
   artopenai,
   artopensea,
   artcore,
-  artutils (>= 0.12.4),
-  pixelsense,
+  artutils (>= 0.17),
+  artpixeltrace,
   rdstools,
   av,
   data.table,
@@ -36,7 +36,6 @@ Imports:
   jsonlite,
   lubridate,
   magick,
-  rlang,
   shiny,
   stats,
   stringr,
@@ -45,15 +44,17 @@ Imports:
 Remotes:
   r-data-science/rdstools,
   r-data-science/rpgconn,
+  artalytics/arthelpers,
   artalytics/artbenchmark,
   artalytics/artopenai,
   artalytics/artopensea,
   artalytics/artutils,
   artalytics/artcore,
-  artalytics/pixelsense
+  artalytics/artpixeltrace
 Depends: 
   R (>= 4.1.0)
 Suggests:
+  arthelpers,
   rpgconn,
   qpdf,
   paws.storage,
@@ -64,10 +65,12 @@ Suggests:
   gifski,
   knitr,
   rmarkdown,
+  quarto,
   testthat (>= 3.0.0),
   rvest,
   httr2,
   xml2,
-  webfakes
-VignetteBuilder: knitr
+  webfakes,
+  pak
+VignetteBuilder: quarto
 
