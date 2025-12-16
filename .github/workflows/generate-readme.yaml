@@ -1,0 +1,172 @@
+name: Generate README
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'registry.yaml'
+      - 'package/**/DESCRIPTION'
+      - '.github/workflows/generate-readme.yaml'
+  workflow_dispatch:
+  schedule:
+    # Run daily at 6 AM UTC to catch any drift
+    - cron: '0 6 * * *'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install yq
+        run: |
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
+
+      - name: Generate README
+        run: |
+          #!/bin/bash
+          set -e
+
+          # Helper function to extract field from DESCRIPTION
+          get_desc_field() {
+            local pkg="$1"
+            local field="$2"
+            local desc_file="package/${pkg}/DESCRIPTION"
+            if [ -f "$desc_file" ]; then
+              grep "^${field}:" "$desc_file" | sed "s/${field}:[[:space:]]*//" | head -1
+            fi
+          }
+
+          # Helper function to generate package row
+          generate_row() {
+            local name="$1"
+            local repo="$2"
+            local desc="$3"
+            local codecov="$4"
+
+            # Get version from DESCRIPTION if available
+            local version=$(get_desc_field "$name" "Version")
+            local repo_name=$(echo "$repo" | cut -d'/' -f2)
+
+            # Build the row
+            cat << EOF
+          | [**${name}**](https://github.com/${repo})<br><sub>${desc}</sub> | ![Version](https://img.shields.io/github/r-package/v/artalytics/build-info?filename=package%2F${name}%2FDESCRIPTION&style=flat&color=%231c98e3)<br>[![issues](https://img.shields.io/github/issues/${repo})](https://github.com/${repo}/issues) | [![R-CMD-check](https://github.com/${repo}/actions/workflows/R-CMD-check.yaml/badge.svg?branch=main)](https://github.com/${repo}/actions/workflows/R-CMD-check.yaml)<br>[![lint](https://github.com/${repo}/actions/workflows/lint.yaml/badge.svg?branch=main)](https://github.com/${repo}/actions/workflows/lint.yaml) | [![codecov](https://codecov.io/gh/${repo}/branch/main/graph/badge.svg${codecov:+?token=$codecov})](https://codecov.io/gh/${repo})<br>[![test-coverage](https://github.com/${repo}/actions/workflows/test-coverage.yaml/badge.svg?branch=main)](https://github.com/${repo}/actions/workflows/test-coverage.yaml) | [![draft](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/artalytics/build-info/main/badges/pr-draft-${name}.json)](https://github.com/${repo}/pulls?q=is:pr+is:open+draft:true)<br>[![ready](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/artalytics/build-info/main/badges/pr-ready-${name}.json)](https://github.com/${repo}/pulls?q=is:pr+is:open+draft:false) |
+          EOF
+          }
+
+          # Start building README
+          cat > README.md << 'HEADER'
+
+          # Artalytics Platform Packages
+
+          A comprehensive digital art analytics and authenticity verification platform built as a modular R package ecosystem. This document provides an overview of all packages organized by their architectural role, with build status, quality metrics, and development activity at a glance.
+
+          > **For Internal Use:** Package names link to repositories. Click badges to navigate to filtered views (issues, PRs by status).
+
+          HEADER
+
+          # Get categories in order
+          categories=$(yq e '.categories | to_entries | sort_by(.value.order) | .[].key' registry.yaml)
+
+          for category in $categories; do
+            title=$(yq e ".categories.${category}.title" registry.yaml)
+            cat_desc=$(yq e ".categories.${category}.description" registry.yaml)
+
+            echo "" >> README.md
+            echo "---" >> README.md
+            echo "" >> README.md
+            echo "## ${title}" >> README.md
+            echo "${cat_desc}" >> README.md
+            echo "" >> README.md
+
+            # Check if category has subcategories
+            has_subcats=$(yq e ".categories.${category}.subcategories // \"\"" registry.yaml)
+
+            if [ -n "$has_subcats" ] && [ "$has_subcats" != "null" ]; then
+              # Get subcategories in order
+              subcats=$(yq e ".categories.${category}.subcategories | to_entries | sort_by(.value.order) | .[].key" registry.yaml)
+
+              for subcat in $subcats; do
+                subcat_title=$(yq e ".categories.${category}.subcategories.${subcat}.title" registry.yaml)
+
+                echo "" >> README.md
+                echo "### ${subcat_title}" >> README.md
+                echo "" >> README.md
+                echo "| Package | Version | Quality | Coverage | Activity |" >> README.md
+                echo "|---------|---------|---------|----------|----------|" >> README.md
+
+                # Get packages for this subcategory
+                yq e ".packages[] | select(.category == \"${category}\" and .subcategory == \"${subcat}\") | .name + \"|\" + .repo + \"|\" + .description + \"|\" + (.codecov_token // \"\")" registry.yaml | \
+                while IFS='|' read -r name repo desc codecov; do
+                  [ -z "$name" ] && continue
+                  generate_row "$name" "$repo" "$desc" "$codecov" >> README.md
+                done
+              done
+            else
+              # No subcategories - just list packages
+              echo "" >> README.md
+              echo "| Package | Version | Quality | Coverage | Activity |" >> README.md
+              echo "|---------|---------|---------|----------|----------|" >> README.md
+
+              yq e ".packages[] | select(.category == \"${category}\") | .name + \"|\" + .repo + \"|\" + .description + \"|\" + (.codecov_token // \"\")" registry.yaml | \
+              while IFS='|' read -r name repo desc codecov; do
+                [ -z "$name" ] && continue
+                generate_row "$name" "$repo" "$desc" "$codecov" >> README.md
+              done
+            fi
+          done
+
+          # Add footer
+          cat >> README.md << 'FOOTER'
+
+          ---
+
+          ## Maintenance Notes
+
+          ### Automated Updates
+
+          This README is **automatically generated** from `registry.yaml` and package DESCRIPTION files.
+
+          **Workflows:**
+          - **README Generation:** Runs when `registry.yaml` or any DESCRIPTION changes, plus daily at 6 AM UTC
+          - **PR Badge Updates:** Runs every 15 minutes to update draft/ready PR counts
+
+          ### Adding New Packages
+
+          1. **Add to registry:** Edit `registry.yaml` and add package entry with category, repo, and description
+          2. **Push to package repo:** The package's `build-info.yaml` workflow will sync its DESCRIPTION file
+          3. **README auto-updates:** This workflow will regenerate README on next trigger
+
+          ### Package Registry
+
+          The `registry.yaml` file is the single source of truth for:
+          - Package categorization and ordering
+          - Repository mappings (handles package name != repo name cases)
+          - Descriptions shown in this README
+          - Codecov token references
+
+          See [BADGE_AUTOMATION.md](./BADGE_AUTOMATION.md) for detailed workflow documentation.
+          FOOTER
+
+          echo "README.md generated successfully"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add README.md
+
+          if git diff --cached --quiet; then
+            echo "No changes to README.md"
+          else
+            git commit -m "docs: regenerate README from registry [skip ci]"
+            git push
+            echo "README.md updated and pushed"
+          fi

@@ -4,12 +4,13 @@ on:
   schedule:
     # Run every 15 minutes
     - cron: '*/15 * * * *'
-  workflow_dispatch: # Allow manual triggering
+  workflow_dispatch:
   push:
     branches:
       - main
     paths:
       - '.github/workflows/update-pr-badges.yaml'
+      - 'registry.yaml'
 
 jobs:
   update-badges:
@@ -23,6 +24,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install yq
+        run: |
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
+
       - name: Update PR count badges
         id: update-badges
         env:
@@ -31,36 +37,28 @@ jobs:
           #!/bin/bash
           set -e
 
-          # Define all packages
-          packages=(
-            "appAdmin"
-            "appPlatform"
-            "artauth"
-            "artbenchmark"
-            "artcore"
-            "artopenai"
-            "artopensea"
-            "artpipelines"
-            "artsend"
-            "artutils"
-            "modArtist"
-            "modBrowse"
-            "modFrames"
-            "modGallery"
-            "modUpload"
-            "pixelsense"
-            "pixelsense2"
-          )
+          # Ensure badges directory exists
+          mkdir -p badges
+
+          # Read packages from registry.yaml
+          # Extract name and repo for each package
+          packages=$(yq e '.packages[] | .name + ":" + .repo' registry.yaml)
+
+          echo "Found packages in registry:"
+          echo "$packages"
+          echo ""
 
           # Track if any files changed
           changes_made=false
 
-          for package in "${packages[@]}"; do
-            echo "Processing $package..."
+          while IFS=: read -r pkg_name repo; do
+            [ -z "$pkg_name" ] && continue
+
+            echo "Processing $pkg_name (repo: $repo)..."
 
             # Get all open PRs for this repo
             pr_data=$(gh pr list \
-              --repo "artalytics/$package" \
+              --repo "$repo" \
               --state open \
               --json isDraft \
               --limit 100 2>/dev/null || echo "[]")
@@ -69,16 +67,17 @@ jobs:
             draft_count=$(echo "$pr_data" | jq '[.[] | select(.isDraft == true)] | length')
             ready_count=$(echo "$pr_data" | jq '[.[] | select(.isDraft == false)] | length')
 
-            # Update draft PR badge JSON
-            draft_file="pr-draft-${package}.json"
+            # Update draft PR badge JSON (in badges/ directory)
+            draft_file="badges/pr-draft-${pkg_name}.json"
             printf '{\n  "schemaVersion": 1,\n  "label": "draft",\n  "message": "%s",\n  "color": "yellow"\n}\n' "$draft_count" > "$draft_file"
 
-            # Update ready PR badge JSON
-            ready_file="pr-ready-${package}.json"
+            # Update ready PR badge JSON (in badges/ directory)
+            ready_file="badges/pr-ready-${pkg_name}.json"
             printf '{\n  "schemaVersion": 1,\n  "label": "ready",\n  "message": "%s",\n  "color": "green"\n}\n' "$ready_count" > "$ready_file"
 
             echo "  Draft PRs: $draft_count, Ready PRs: $ready_count"
-          done
+
+          done <<< "$packages"
 
           # Check if any files changed
           if [[ -n $(git status --porcelain) ]]; then
@@ -92,6 +91,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add pr-draft-*.json pr-ready-*.json
+          git add badges/
           git commit -m "chore: update PR count badges [skip ci]"
           git push

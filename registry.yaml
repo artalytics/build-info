@@ -1,0 +1,217 @@
+# =============================================================================
+# Artalytics R Package Registry
+# =============================================================================
+# This file is the single source of truth for all platform packages.
+# Used by workflows to generate README, update badges, and track packages.
+#
+# Structure mirrors the codebase organization:
+#   app/  - Shiny applications, modules, and shared UI components
+#   tool/ - Analysis and processing tools
+#   api/  - External API integrations
+#   core/ - Core infrastructure packages
+#   misc/ - Meta-packages and utilities
+# =============================================================================
+
+categories:
+  core:
+    title: Core Infrastructure
+    description: Essential platform services, database access, and shared utilities
+    order: 1
+
+  api:
+    title: API Integrations
+    description: External service integrations for AI, marketplaces, and communications
+    order: 2
+
+  tool:
+    title: Analysis Tools
+    description: Data processing, artwork analysis, and verification tools
+    order: 3
+
+  app:
+    title: Application Layer
+    description: Shiny applications and modules providing the user interface
+    order: 4
+    subcategories:
+      apps:
+        title: Applications
+        description: Standalone Shiny applications
+        order: 1
+      modules:
+        title: Modules
+        description: Reusable Shiny modules
+        order: 2
+      shared:
+        title: Shared Components
+        description: Shared UI components and utilities
+        order: 3
+
+  misc:
+    title: Miscellaneous
+    description: Meta-packages, helpers, and development utilities
+    order: 5
+
+# =============================================================================
+# Package Definitions
+# =============================================================================
+
+packages:
+  # ---------------------------------------------------------------------------
+  # CORE INFRASTRUCTURE
+  # ---------------------------------------------------------------------------
+
+  - name: artcore
+    repo: artalytics/artcore
+    category: core
+    description: Core platform infrastructure (database, CDN, config)
+    codecov_token: HF1p0JBps7
+
+  - name: artutils
+    repo: artalytics/artutils
+    category: core
+    description: Extended utilities and app-specific functionality
+    codecov_token: ZCQDWHDIMN
+
+  - name: artauth
+    repo: artalytics/artauth
+    category: core
+    description: Authentication and access control services
+
+  # ---------------------------------------------------------------------------
+  # API INTEGRATIONS
+  # ---------------------------------------------------------------------------
+
+  - name: artgemini
+    repo: artalytics/artgemini
+    category: api
+    description: Google Gemini API integration for AI-powered analysis
+
+  - name: artopenai
+    repo: artalytics/artopenai
+    category: api
+    description: OpenAI API integration for AI-powered analysis
+    codecov_token: 0O0YP9D4BZ
+
+  - name: artopensea
+    repo: artalytics/artopensea
+    category: api
+    description: OpenSea API integration for NFT operations
+    codecov_token: DPNHUH5JQ8
+
+  - name: artsend
+    repo: artalytics/artsend
+    category: api
+    description: Email and notification service integration
+
+  # ---------------------------------------------------------------------------
+  # ANALYSIS TOOLS
+  # ---------------------------------------------------------------------------
+
+  - name: artbenchmark
+    repo: artalytics/artbenchmark
+    category: tool
+    description: Artwork valuation and benchmarking system
+    codecov_token: 0XZH99QR8N
+
+  - name: artcurator
+    repo: artalytics/artcurator
+    category: tool
+    description: Art curation and collection analysis tools
+
+  - name: artpipelines
+    repo: artalytics/artpipelines
+    category: tool
+    description: Core data processing orchestration engine
+    codecov_token: 2AXRIN2AZE
+
+  - name: artpixeltrace
+    repo: artalytics/artpixeltrace
+    category: tool
+    description: Artwork verification and certificate generation
+    codecov_token: BNRMDR0N7A
+    aliases:
+      - pixelsense  # Historical name
+
+  # ---------------------------------------------------------------------------
+  # APPLICATION LAYER - Apps
+  # ---------------------------------------------------------------------------
+
+  - name: appPlatform
+    repo: artalytics/appPlatform
+    category: app
+    subcategory: apps
+    description: Main Shiny application orchestrating all modules
+
+  - name: appAdmin
+    repo: artalytics/appAdmin
+    category: app
+    subcategory: apps
+    description: Admin interface for platform management
+
+  - name: certFinder
+    repo: artalytics/certFinder
+    category: app
+    subcategory: apps
+    description: Certificate discovery and verification application
+
+  # ---------------------------------------------------------------------------
+  # APPLICATION LAYER - Modules
+  # ---------------------------------------------------------------------------
+
+  - name: modArtist
+    repo: artalytics/modArtist
+    category: app
+    subcategory: modules
+    description: Artist profile and management module
+
+  - name: modBrowse
+    repo: artalytics/modBrowse
+    category: app
+    subcategory: modules
+    description: Artwork collection navigation module
+    codecov_token: 4LJY81YPAI
+
+  - name: modFrames
+    repo: artalytics/modFrames
+    category: app
+    subcategory: modules
+    description: Timelapse and comparison frame module
+    codecov_token: CBHQUA822Y
+
+  - name: modGallery
+    repo: artalytics/modGallery
+    category: app
+    subcategory: modules
+    description: Gallery display module with NFT integration
+    codecov_token: FTABS070NS
+
+  - name: modUpload
+    repo: artalytics/modUpload
+    category: app
+    subcategory: modules
+    description: File upload and processing module
+    codecov_token: 32BHCIIZRT
+
+  # ---------------------------------------------------------------------------
+  # APPLICATION LAYER - Shared Components
+  # ---------------------------------------------------------------------------
+
+  - name: artshiny
+    repo: artalytics/artshiny
+    category: app
+    subcategory: shared
+    description: Shared Shiny UI components and utilities
+
+  # ---------------------------------------------------------------------------
+  # MISCELLANEOUS
+  # ---------------------------------------------------------------------------
+
+  - name: artaverse
+    repo: artalytics/artaverse
+    category: misc
+    description: Meta-package for installing the Artalytics platform
+
+  - name: arthelpers
+    repo: artalytics/arthelpers
+    category: misc
+    description: Development helpers and utilities
