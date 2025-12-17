@@ -14,7 +14,6 @@ RoxygenNote: 7.3.3
 URL: https://docs.artalytics.dev/r/artutils, https://github.com/artalytics/artutils
 BugReports: https://github.com/artalytics/artutils/issues
 SystemRequirements: 
-  ImageMagick++ (libmagick++-dev),
   qpdf
 Config/testthat/edition: 3
 Imports:
@@ -25,7 +24,6 @@ Imports:
   jsonlite,
   lifecycle,
   lubridate,
-  magick,
   stats,
   stringr,
   artcore
