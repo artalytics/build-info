@@ -32,7 +32,7 @@ Config/testthat/edition: 3
 Imports:
     artutils,
     artshiny,
-    pixelsense,
+    artpixeltrace,
     artpipelines,
     shiny,
     shinyalert,
@@ -58,7 +58,7 @@ Remotes:
   github::artalytics/artcore,
   github::artalytics/artutils,
   github::artalytics/artshiny,
-  github::artalytics/pixelsense,
+  github::artalytics/artpixeltrace,
   github::artalytics/artpipelines,
   github::r-data-science/rdstools,
   github::JohnCoene/waiter
