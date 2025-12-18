@@ -27,5 +27,9 @@ Suggests:
   covr,
   fs,
   httptest2,
+  knitr,
+  quarto,
+  rmarkdown,
   testthat (>= 3.0.0),
   withr
+VignetteBuilder: quarto
