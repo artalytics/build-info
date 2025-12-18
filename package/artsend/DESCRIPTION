@@ -24,4 +24,14 @@ Suggests:
     covr,
     mockery,
     withr,
-    tinytex
+    quarto,
+    knitr,
+    rmarkdown,
+    data.table,
+    uuid,
+    lubridate,
+    stringr,
+    rdstools
+VignetteBuilder: quarto
+Remotes:
+    r-data-science/rdstools
