@@ -36,8 +36,10 @@ Depends:
 Suggests:
   covr,
   knitr,
+  later,
+  quarto,
   rmarkdown,
   testthat (>= 3.0.0),
   uuid,
   qpdf
-VignetteBuilder: knitr
+VignetteBuilder: quarto
