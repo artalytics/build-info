@@ -1,12 +1,15 @@
 Package: artbenchmark
-Title: Benchmark Artworks
-Version: 0.7.2
-Authors@R: 
+Title: Artwork Metrics Computation for Portfolio Benchmarking
+Version: 0.9.0
+Authors@R:
     person(given = "Bobby",
            family = "Fatemi",
            role = c("aut", "cre"),
            email = "bfatemi07@gmail.com")
-Description: Package containing tools for artwork valuation.
+Description: Computes image-derived metrics for artwork analysis within the
+    Artalytics benchmark framework. Extracts color, coverage, and complexity
+    metrics from artwork images to support portfolio-relative benchmarking
+    across Time & Effort, Skill & Artistry, and Complexity & Detail categories.
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -17,18 +20,15 @@ SystemRequirements: ImageMagick++ (libmagick++-dev)
 Config/testthat/edition: 3
 Imports:
   data.table,
-  fs,
-  lubridate,
   magick,
   stats,
-  stringr,
-  artcore (>= 0.9.0),
-  artutils,
-  testthat
-Remotes:
-  github::artalytics/artcore,
-  github::artalytics/artutils
-Depends: 
+  stringr
+Depends:
   R (>= 4.1.0)
 Suggests:
-  covr
+  covr,
+  knitr,
+  quarto,
+  rmarkdown,
+  testthat (>= 3.0.0)
+VignetteBuilder: quarto
