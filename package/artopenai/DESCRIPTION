@@ -1,6 +1,6 @@
 Package: artopenai
 Title: OpenAI Toolkit
-Version: 0.9.2
+Version: 0.9.4
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -16,16 +16,16 @@ BugReports: https://github.com/artalytics/artopenai/issues
 SystemRequirements: ImageMagick++ (libmagick++-dev)
 Config/testthat/edition: 3
 Imports: 
-    base64enc,
-    data.table,
-    fs,
-    glue,
-    httr2,
-    jsonlite,
-    magick,
-    readr,
-    jsonvalidate,
-    stringr
+  base64enc,
+  data.table,
+  fs,
+  glue,
+  httr2,
+  jsonlite,
+  magick,
+  readr,
+  jsonvalidate,
+  stringr
 Depends: 
   R (>= 4.1.0)
 Suggests: 
@@ -35,5 +35,6 @@ Suggests:
   knitr,
   quarto,
   rmarkdown,
+  devtools,
   httptest2
 VignetteBuilder: quarto
