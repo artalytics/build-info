@@ -18,12 +18,12 @@ SystemRequirements:
   Tesseract OCR (libtesseract-dev, libleptonica-dev, tesseract-ocr-eng),  
   Poppler PDF (libpoppler-cpp-dev, poppler-data)
 Config/testthat/edition: 3
-Imports:
-  artbenchmark,
+Imports: 
+  artbenchmark (>= 0.9.0),
   artopenai,
   artopensea,
-  artcore,
-  artutils (>= 0.17),
+  artcore (>= 1.2.0),
+  artutils (>= 0.19.0),
   artpixeltrace,
   rdstools,
   av,
@@ -41,7 +41,7 @@ Imports:
   stringr,
   archive,
   utils
-Remotes:
+Remotes: 
   r-data-science/rdstools,
   r-data-science/rpgconn,
   artalytics/arthelpers,
@@ -53,24 +53,25 @@ Remotes:
   artalytics/artpixeltrace
 Depends: 
   R (>= 4.1.0)
-Suggests:
+Suggests: 
   arthelpers,
-  rpgconn,
-  qpdf,
-  paws.storage,
   covr,
-  tesseract,
-  uuid,
-  withr,
   gifski,
-  knitr,
-  rmarkdown,
-  quarto,
-  testthat (>= 3.0.0),
-  rvest,
+  base64enc,
+  httptest2,
   httr2,
-  xml2,
+  knitr,
+  pak,
+  paws.storage,
+  qpdf,
+  quarto,
+  rmarkdown,
+  rpgconn,
+  rvest,
+  tesseract,
+  testthat (>= 3.0.0),
+  uuid,
   webfakes,
-  pak
+  withr,
+  xml2
 VignetteBuilder: quarto
-
