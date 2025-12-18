@@ -15,10 +15,15 @@ Imports:
   data.table,
   stringr,
   DBI,
-  jsonlite
+  jsonlite,
+  fs,
+  rdstools,
+  artgemini
 Remotes:
   artalytics/artcore,
-  artalytics/artutils
+  artalytics/artutils,
+  artalytics/artgemini,
+  r-data-science/rdstools
 Suggests: 
   testthat (>= 3.0.0),
   covr,
