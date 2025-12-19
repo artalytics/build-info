@@ -24,14 +24,14 @@ Imports:
     data.table,
     stringr,
     fs,
-    utils
-Remotes:  
+    utils,
+    testthat
+Remotes: 
     artalytics/artcore
 Suggests:
     shinytest2,
     httptest2,
     withr,
-    testthat (>= 3.0.0),
     usethis,
     covr,
     mockery,
