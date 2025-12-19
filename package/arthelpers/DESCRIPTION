@@ -1,6 +1,6 @@
 Package: arthelpers
 Title: Artalytics Developer Tools
-Version: 0.0.2
+Version: 0.0.4
 Authors@R: 
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
 Description: Internal developer tools and utilities for Artalytics R package development.
