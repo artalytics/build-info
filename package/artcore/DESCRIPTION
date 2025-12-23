@@ -1,6 +1,6 @@
 Package: artcore
 Title: Platform Core Tools
-Version: 1.2.0
+Version: 1.3.0
 Authors@R:
     person(given = "Bobby",
            family = "Fatemi",
@@ -19,7 +19,7 @@ Imports:
     DBI,
     RPostgres,
     paws.storage,
-    httr,
+    httr2,
     fs,
     stringr,
     uuid,
