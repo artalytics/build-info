@@ -1,6 +1,6 @@
 Package: modFrames
 Title: Art Explore Module
-Version: 0.7.9
+Version: 0.7.10
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
