@@ -17,10 +17,10 @@ Config/testthat/edition: 3
 Imports:
     rdstools,
     artopensea,
+    artcore,
     artutils,
     artshiny,
     artsend,
-    artpixeltrace,
     shinyNextUI,
     bslib (>= 0.9.0),
     data.table,
@@ -35,12 +35,12 @@ Imports:
     waiter
 Remotes:
   github::r-data-science/rdstools,
+  github::artalytics/artcore,
   github::artalytics/artopensea,
   github::artalytics/artutils,
   github::artalytics/artcore,
   github::artalytics/artshiny,
   github::artalytics/artsend,
-  github::artalytics/artpixeltrace,
   github::RinteRface/shinyNextUI,
   github::JohnCoene/waiter
 Depends:
