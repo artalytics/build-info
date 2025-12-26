@@ -55,5 +55,6 @@ Suggests:
   rmarkdown,
   quarto,
   shiny.react,
+  tinytex,
   pdftools
 VignetteBuilder: quarto
