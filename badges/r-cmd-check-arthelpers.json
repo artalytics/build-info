@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
   "label": "R-CMD-check",
-  "message": "unknown",
-  "color": "lightgrey"
+  "message": "failing",
+  "color": "red"
 }
