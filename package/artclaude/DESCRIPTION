@@ -1,0 +1,39 @@
+Package: artclaude
+Title: Anthropic Claude Toolkit
+Version: 0.2.0
+Authors@R:
+    person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
+Description: Experimental R interface to Anthropic's Claude API with full support
+    for extended thinking, tool use, computer use, vision, and advanced beta features.
+    Built on ellmer for robust infrastructure with Artalytics conventions.
+License: file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+URL: https://docs.artalytics.dev/r/artclaude, https://github.com/artalytics/artclaude
+BugReports: https://github.com/artalytics/artclaude/issues
+Depends:
+    R (>= 4.1.0)
+Imports:
+    ellmer (>= 0.4.0),
+    stringr,
+    base64enc,
+    fs,
+    yaml,
+    httr2,
+    curl,
+    data.table
+Suggests:
+    knitr,
+    rmarkdown,
+    quarto,
+    testthat (>= 3.0.0),
+    httptest2,
+    DBI,
+    digest,
+    jsonlite,
+    reticulate,
+    screenshot
+VignetteBuilder: quarto
+LazyData: true
+Config/testthat/edition: 3
