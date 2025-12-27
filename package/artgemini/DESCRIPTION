@@ -1,6 +1,6 @@
 Package: artgemini
 Title: Google Gemini Toolkit
-Version: 0.1.9
+Version: 0.2.0
 Authors@R: 
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
 Description: Helpers for working with Google's Gemini models inside the Artalytics platform.
@@ -14,14 +14,10 @@ Config/testthat/edition: 3
 Depends: 
     R (>= 4.1.0)
 Imports:
-    base64enc,
+    artcore (>= 1.4.0),
     data.table,
-    fs,
-    glue,
     httr2,
     jsonlite,
-    jsonvalidate,
-    magick,
     stringr
 Suggests:
     covr,
@@ -30,5 +26,10 @@ Suggests:
     knitr,
     quarto,
     rmarkdown,
-    testthat (>= 3.0.0)
+    base64enc,
+    fs,
+    testthat (>= 3.0.0),
+    devtools
+Remotes:
+    artalytics/artcore
 VignetteBuilder: quarto
