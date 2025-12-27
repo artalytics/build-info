@@ -1,6 +1,6 @@
 Package: artcore
 Title: Platform Core Tools
-Version: 1.3.0
+Version: 1.4.0
 Authors@R:
     person(given = "Bobby",
            family = "Fatemi",
@@ -18,14 +18,16 @@ Config/testthat/edition: 3
 Imports:
     DBI,
     RPostgres,
-    paws.storage,
-    httr2,
+    base64enc,
     fs,
-    stringr,
-    uuid,
+    httr2,
+    magick,
     paws,
+    paws.storage,
     rdstools,
-    scales
+    scales,
+    stringr,
+    uuid
 Remotes:
     r-data-science/rdstools
 Depends:
