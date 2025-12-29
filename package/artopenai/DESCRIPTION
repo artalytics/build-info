@@ -34,3 +34,4 @@ Suggests:
 Remotes:
   artalytics/artcore
 VignetteBuilder: quarto
+Config/Needs/website: pkgdown, artalytics/templ.pkgdown
