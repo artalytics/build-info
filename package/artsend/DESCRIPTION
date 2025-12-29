@@ -32,3 +32,4 @@ Suggests:
     uuid,
     withr
 Depends: R (>= 4.1.0)
+Config/Needs/website: pkgdown, artalytics/templ.pkgdown
