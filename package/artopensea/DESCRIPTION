@@ -25,7 +25,10 @@ Depends:
   R (>= 4.1.0)
 Suggests:
   covr,
+  data.table,
+  digest,
   fs,
+  jsonlite,
   httptest2,
   knitr,
   quarto,
@@ -33,3 +36,4 @@ Suggests:
   testthat (>= 3.0.0),
   withr
 VignetteBuilder: quarto
+Config/Needs/website: pkgdown, artalytics/templ.pkgdown
