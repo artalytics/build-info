@@ -16,6 +16,7 @@ BugReports: https://github.com/artalytics/artutils/issues
 SystemRequirements: 
   qpdf
 Config/testthat/edition: 3
+Config/Needs/website: pkgdown, artalytics/templ.pkgdown
 Imports:
   rdstools,
   data.table,
