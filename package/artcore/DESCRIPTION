@@ -13,7 +13,7 @@ LazyData: true
 RoxygenNote: 7.3.3
 URL: https://docs.artalytics.dev/r/artcore, https://github.com/artalytics/artcore
 BugReports: https://github.com/artalytics/artcore/issues
-Config/Needs/website: pkgdown
+Config/Needs/website: pkgdown, artalytics/templ.pkgdown
 Config/testthat/edition: 3
 Imports:
     DBI,
