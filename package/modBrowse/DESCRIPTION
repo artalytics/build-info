@@ -29,11 +29,9 @@ Imports:
     shinyjs,
     waiter
 Remotes:
-  github::RinteRface/shinyNextUI,
-  github::JohnCoene/waiter,
-  github::artalytics/artcore,
-  github::artalytics/artutils,
-  github::artalytics/artshiny
+  artalytics/artcore,
+  artalytics/artutils,
+  artalytics/artshiny
 Depends: 
   R (>= 4.1.0)
 Suggests:
