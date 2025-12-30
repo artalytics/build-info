@@ -27,7 +27,7 @@ Imports:
   shinyWidgets,
   stats
 Remotes:
-  github::artalytics/artutils
+  artalytics/artutils
 Depends: 
   R (>= 4.1.0)
 Suggests:
