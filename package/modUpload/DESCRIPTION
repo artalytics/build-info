@@ -30,10 +30,12 @@ SystemRequirements:
   Fortran compiler (gfortran)
 Config/testthat/edition: 3
 Imports:
+    artcore,
     artutils,
     artshiny,
     artpixeltrace,
     artpipelines,
+    rdstools,
     shiny,
     shinyalert,
     shinyjs,
@@ -48,20 +50,17 @@ Imports:
     future,
     promises,
     rlang,
-    artcore,
     lubridate,
     utils,
-    rdstools,
     DBI,
     htmltools
 Remotes:
-  github::artalytics/artcore,
-  github::artalytics/artutils,
-  github::artalytics/artshiny,
-  github::artalytics/artpixeltrace,
-  github::artalytics/artpipelines,
-  github::r-data-science/rdstools,
-  github::JohnCoene/waiter
+  artalytics/artcore,
+  artalytics/artutils,
+  artalytics/artshiny,
+  artalytics/artpixeltrace,
+  artalytics/artpipelines,
+  r-data-science/rdstools
 Depends: 
   R (>= 4.1.0)
 Suggests:
