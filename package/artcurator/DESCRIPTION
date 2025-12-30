@@ -1,6 +1,6 @@
 Package: artcurator
 Title: Art Curation and Analysis Tools
-Version: 0.0.2
+Version: 0.1.0
 Authors@R: 
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
 Description: Tools for curating and analyzing art collections, including metadata management, image analysis, and collection insights.
@@ -8,24 +8,40 @@ License: file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
-URL: https://github.com/artalytics/artcurator
+URL: https://docs.artalytics.dev/r/artcurator, https://github.com/artalytics/artcurator
 BugReports: https://github.com/artalytics/artcurator/issues
 Config/testthat/edition: 3
-Imports: 
+Imports:
+  artcore (>= 1.4.0),
+  artgemini (>= 0.2.0),
+  artopenai (>= 0.10.0),
+  artutils (>= 0.19.0),
   data.table,
-  stringr,
   DBI,
-  jsonlite,
   fs,
-  rdstools,
-  artgemini
+  glue,
+  jsonlite,
+  jsonvalidate,
+  lifecycle,
+  stringr
+Suggests:
+  arthelpers,
+  covr,
+  httptest2,
+  knitr,
+  quarto,
+  rmarkdown,
+  testthat (>= 3.0.0),
+  tinytex,
+  withr,
+  devtools,
+  base64enc
 Remotes:
   artalytics/artcore,
   artalytics/artutils,
   artalytics/artgemini,
-  r-data-science/rdstools
-Suggests: 
-  testthat (>= 3.0.0),
-  covr,
-  artcore,
-  artutils
+  artalytics/artopenai,
+  artalytics/arthelpers
+VignetteBuilder: quarto
+Depends: 
+    R (>= 4.1.0)
