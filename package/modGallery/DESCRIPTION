@@ -34,15 +34,13 @@ Imports:
     stringr,
     waiter
 Remotes:
-  github::r-data-science/rdstools,
-  github::artalytics/artcore,
-  github::artalytics/artopensea,
-  github::artalytics/artutils,
-  github::artalytics/artcore,
-  github::artalytics/artshiny,
-  github::artalytics/artsend,
-  github::RinteRface/shinyNextUI,
-  github::JohnCoene/waiter
+  r-data-science/rdstools,
+  artalytics/artcore,
+  artalytics/artopensea,
+  artalytics/artutils,
+  artalytics/artcore,
+  artalytics/artshiny,
+  artalytics/artsend
 Depends:
   R (>= 4.1.0)
 Suggests:
