@@ -34,7 +34,6 @@ Imports:
     rdstools,
     DBI
 Remotes:
-  JohnCoene/waiter,
   r-data-science/rdstools,
   artalytics/artcore,
   artalytics/artutils,
