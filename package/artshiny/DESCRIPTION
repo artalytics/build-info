@@ -1,29 +1,40 @@
 Package: artshiny
 Title: Shared Shiny UI Components
-Version: 0.1.1
+Version: 0.2.0
 Authors@R:
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
 Description: Provides reusable Shiny UI components and helpers for the Artalytics
     platform. Includes shared modules for statistics displays, loading screens,
-    and other interface elements used across multiple app modules. Centralizes
-    common UI patterns to maintain consistency and reduce code duplication.
+    reactive app data initialization, and other interface elements used across
+    multiple app modules. Centralizes common UI patterns to maintain consistency
+    and reduce code duplication.
 License: file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
-URL: https://github.com/artalytics/artshiny
+URL: https://github.com/artalytics/artshiny,
+    https://docs.artalytics.dev/r/artshiny/
 BugReports: https://github.com/artalytics/artshiny/issues
 Config/testthat/edition: 3
 Imports:
     artcore (>= 0.9.0),
+    artutils (>= 0.19.0),
     shiny,
-    rdstools
+    rdstools,
+    stringr
 Remotes:
     r-data-science/rdstools,
-    artalytics/artcore
+    artalytics/artcore,
+    artalytics/artutils
 Suggests:
     testthat (>= 3.0.0),
     covr,
-    tinytex
+    knitr,
+    quarto,
+    tinytex,
+    pak,
+    waiter,
+    rmarkdown
 Depends:
     R (>= 4.1.0)
+VignetteBuilder: quarto
