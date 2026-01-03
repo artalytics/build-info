@@ -1,6 +1,6 @@
 Package: artpipelines
 Title: Art Pipelines
-Version: 0.11.0
+Version: 0.12.0
 Authors@R: 
     person(given = "Bobby",
            family = "Fatemi",
@@ -10,6 +10,8 @@ Description: Pipelines that generate data needed by the Artalytics platform.
 License: file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.3.3
+URL: https://docs.artalytics.dev/r/artpipelines, https://github.com/artalytics/artpipelines
+BugReports: https://github.com/artalytics/artpipelines/issues
 SystemRequirements: 
   ImageMagick++ (libmagick++-dev),  
   FFmpeg/libavfilter (libavfilter-dev),  
@@ -18,13 +20,13 @@ SystemRequirements:
   Tesseract OCR (libtesseract-dev, libleptonica-dev, tesseract-ocr-eng),  
   Poppler PDF (libpoppler-cpp-dev, poppler-data)
 Config/testthat/edition: 3
-Imports: 
+Imports:
   artbenchmark (>= 0.9.0),
-  artopenai,
-  artopensea,
-  artcore (>= 1.2.0),
+  artcore (>= 1.4.0),
+  artcurator (>= 0.1.0),
   artutils (>= 0.19.0),
   artpixeltrace,
+  artopensea,
   rdstools,
   av,
   data.table,
@@ -41,16 +43,16 @@ Imports:
   stringr,
   archive,
   utils
-Remotes: 
-  r-data-science/rdstools,
-  r-data-science/rpgconn,
-  artalytics/arthelpers,
+Remotes:
   artalytics/artbenchmark,
-  artalytics/artopenai,
-  artalytics/artopensea,
-  artalytics/artutils,
   artalytics/artcore,
-  artalytics/artpixeltrace
+  artalytics/artcurator,
+  artalytics/arthelpers,
+  artalytics/artopensea,
+  artalytics/artpixeltrace,
+  artalytics/artutils,
+  r-data-science/rdstools,
+  r-data-science/rpgconn
 Depends: 
   R (>= 4.1.0)
 Suggests: 
