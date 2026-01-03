@@ -36,6 +36,7 @@ Suggests:
     covr,
     artshiny,
     arthelpers,
-    htmltools
+    htmltools,
+    tinytex
 Depends:
     R (>= 4.1.0)
