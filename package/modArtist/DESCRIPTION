@@ -29,11 +29,13 @@ Remotes:
     artalytics/artcore,
     artalytics/artutils,
     artalytics/artshiny,
+    artalytics/arthelpers,
     JohnCoene/waiter
 Suggests:
     testthat (>= 3.0.0),
     covr,
     artshiny,
+    arthelpers,
     htmltools
 Depends:
     R (>= 4.1.0)
