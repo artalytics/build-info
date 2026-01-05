@@ -1,7 +1,7 @@
 Package: artcurator
 Title: Art Curation and Analysis Tools
-Version: 0.1.0
-Authors@R: 
+Version: 0.2.0
+Authors@R:
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
 Description: Tools for curating and analyzing art collections, including metadata management, image analysis, and collection insights.
 License: file LICENSE
@@ -12,36 +12,37 @@ URL: https://docs.artalytics.dev/r/artcurator, https://github.com/artalytics/art
 BugReports: https://github.com/artalytics/artcurator/issues
 Config/testthat/edition: 3
 Imports:
-  artcore (>= 1.4.0),
-  artgemini (>= 0.2.0),
-  artopenai (>= 0.10.0),
-  artutils (>= 0.19.0),
-  data.table,
-  DBI,
-  fs,
-  glue,
-  jsonlite,
-  jsonvalidate,
-  lifecycle,
-  stringr
+    artcore (>= 1.4.0),
+    artgemini (>= 0.3.0),
+    artopenai (>= 0.11.0),
+    artutils (>= 0.19.0),
+    data.table,
+    DBI,
+    ellmer (>= 0.4.0),
+    fs,
+    glue,
+    jsonlite,
+    jsonvalidate,
+    lifecycle,
+    stringr
 Suggests:
-  arthelpers,
-  covr,
-  httptest2,
-  knitr,
-  quarto,
-  rmarkdown,
-  testthat (>= 3.0.0),
-  tinytex,
-  withr,
-  devtools,
-  base64enc
+    arthelpers,
+    base64enc,
+    covr,
+    devtools,
+    httptest2,
+    knitr,
+    quarto,
+    rmarkdown,
+    testthat (>= 3.0.0),
+    tinytex,
+    withr
 Remotes:
-  artalytics/artcore,
-  artalytics/artutils,
-  artalytics/artgemini,
-  artalytics/artopenai,
-  artalytics/arthelpers
+    artalytics/artcore,
+    artalytics/artutils,
+    artalytics/artgemini,
+    artalytics/artopenai,
+    artalytics/arthelpers
 VignetteBuilder: quarto
-Depends: 
+Depends:
     R (>= 4.1.0)
