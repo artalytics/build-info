@@ -1,7 +1,7 @@
 Package: artgemini
 Title: Google Gemini Toolkit
-Version: 0.2.0
-Authors@R: 
+Version: 0.3.0
+Authors@R:
     person("Bobby", "Fatemi", , "bobby@artalytics.app", role = c("aut", "cre"))
 Description: Helpers for working with Google's Gemini models inside the Artalytics platform.
 License: file LICENSE
@@ -12,11 +12,12 @@ URL: https://docs.artalytics.dev/r/artgemini, https://github.com/artalytics/artg
 BugReports: https://github.com/artalytics/artgemini/issues
 Config/testthat/edition: 3
 Config/Needs/website: pkgdown, artalytics/templ.pkgdown
-Depends: 
+Depends:
     R (>= 4.1.0)
 Imports:
     artcore (>= 1.4.0),
     data.table,
+    ellmer (>= 0.2.0),
     httr2,
     jsonlite,
     stringr
