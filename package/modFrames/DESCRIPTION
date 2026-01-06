@@ -1,12 +1,17 @@
 Package: modFrames
-Title: Art Explore Module
-Version: 0.7.10
-Authors@R: 
+Title: Frame Analysis and Creative Journey Storytelling Module
+Version: 0.7.11
+Authors@R:
     person(given = "Bobby",
            family = "Fatemi",
            role = c("aut", "cre"),
            email = "bobby@artalytics.app")
-Description: Module for Artalytics Shiny App.
+Description: Shiny UI module for the Artalytics platform providing frame
+    comparison, timelapse playback, and AI-powered creative journey
+    storytelling. Enables side-by-side frame analysis with difference
+    visualization, animated timelapse progression, and marketing-ready
+    narrative insights about artwork creation process. Designed to be
+    embedded in appPlatform, not deployed standalone.
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -14,22 +19,27 @@ RoxygenNote: 7.3.3
 URL: https://github.com/artalytics/modFrames
 BugReports: https://github.com/artalytics/modFrames/issues
 SystemRequirements: ImageMagick++ (libmagick++-dev)
+VignetteBuilder: quarto
 Config/testthat/edition: 3
+Config/Needs/website: pkgdown, artalytics/templ.pkgdown
 Imports:
-  artutils,
-  bslib (>= 0.9.0),
-  data.table,
-  magick,
-  plotly,
-  rdstools,
-  scales,
-  shiny,
-  shinyWidgets,
-  stats
+    artutils,
+    bslib (>= 0.9.0),
+    data.table,
+    magick,
+    plotly,
+    rdstools,
+    scales,
+    shiny,
+    shinyWidgets,
+    stats
 Remotes:
-  artalytics/artutils
-Depends: 
-  R (>= 4.1.0)
+    artalytics/artutils
+Depends:
+    R (>= 4.1.0)
 Suggests:
-  covr,
-  testthat (>= 3.0.0)
+    covr,
+    knitr,
+    quarto,
+    rmarkdown,
+    testthat (>= 3.0.0)
