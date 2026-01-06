@@ -1,39 +1,44 @@
 Package: modBrowse
 Title: Browse Artworks
-Version: 0.9.2
-Authors@R: 
-    person(given = "Bobby",
-           family = "Fatemi",
-           role = c("aut", "cre"),
-           email = "bobby@artalytics.app")
+Version: 0.9.3
+Authors@R:
+  person(given = "Bobby",
+         family = "Fatemi",
+         role = c("aut", "cre"),
+         email = "bobby@artalytics.app")
 Description: Shiny Module for Artalytics Platform App.
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.3
-URL: https://github.com/artalytics/modBrowse
+URL: https://docs.artalytics.dev/r/modBrowse, https://github.com/artalytics/modBrowse
 BugReports: https://github.com/artalytics/modBrowse/issues
 Config/testthat/edition: 3
 Imports:
-    artcore,
-    artutils,
-    artshiny,
-    shinyNextUI,
-    bslib (>= 0.9.0),
-    data.table,
-    scales,
-    shiny,
-    shiny.react,
-    shinyWidgets,
-    stringr,
-    shinyjs,
-    waiter
+  artcore,
+  artutils,
+  artshiny,
+  shinyNextUI,
+  bslib (>= 0.9.0),
+  data.table,
+  scales,
+  shiny,
+  shiny.react,
+  shinyWidgets,
+  stringr,
+  shinyjs,
+  waiter
 Remotes:
   artalytics/artcore,
   artalytics/artutils,
   artalytics/artshiny
-Depends: 
+Depends:
   R (>= 4.1.0)
 Suggests:
   covr,
+  knitr,
+  quarto,
+  rmarkdown,
   testthat (>= 3.0.0)
+VignetteBuilder: quarto
+Config/Needs/website: pkgdown, artalytics/templ.pkgdown
