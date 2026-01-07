@@ -1,7 +1,7 @@
 Package: modUpload
 Title: Art Upload Module
-Version: 0.9.1
-Authors@R: 
+Version: 1.1.0
+Authors@R:
     person(given = "Bobby",
            family = "Fatemi",
            role = c("aut", "cre"),
@@ -11,28 +11,29 @@ License: file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.3
-URL: https://github.com/artalytics/modUpload
+URL: https://github.com/artalytics/modUpload,
+  https://docs.artalytics.dev/r/modUpload
 BugReports: https://github.com/artalytics/modUpload/issues
-SystemRequirements: 
-  ImageMagick++ (libmagick++-dev),  
-  FFmpeg/libavfilter (libavfilter-dev),  
-  Archive (libarchive-dev),  
-  ExifTool (libimage-exiftool-perl),  
-  Tesseract OCR (libtesseract-dev, libleptonica-dev, tesseract-ocr-eng),  
-  Poppler PDF (libpoppler-cpp-dev, poppler-data),  
-  Armadillo (libarmadillo-dev),  
-  BLAS/LAPACK (libblas-dev, liblapack-dev),  
-  ARPACK (libarpack++2-dev),  
-  FFTW3 (libfftw3-dev),  
-  JPEG (libjpeg-dev),  
-  PNG (libpng-dev),  
-  TIFF (libtiff5-dev),  
+SystemRequirements:
+  ImageMagick++ (libmagick++-dev),
+  FFmpeg/libavfilter (libavfilter-dev),
+  Archive (libarchive-dev),
+  ExifTool (libimage-exiftool-perl),
+  Tesseract OCR (libtesseract-dev, libleptonica-dev, tesseract-ocr-eng),
+  Poppler PDF (libpoppler-cpp-dev, poppler-data),
+  Armadillo (libarmadillo-dev),
+  BLAS/LAPACK (libblas-dev, liblapack-dev),
+  ARPACK (libarpack++2-dev),
+  FFTW3 (libfftw3-dev),
+  JPEG (libjpeg-dev),
+  PNG (libpng-dev),
+  TIFF (libtiff5-dev),
   Fortran compiler (gfortran)
 Config/testthat/edition: 3
 Imports:
     artcore,
     artutils,
-    artshiny,
+    artshiny (>= 0.2.1),
     artpixeltrace,
     artpipelines,
     rdstools,
@@ -43,7 +44,6 @@ Imports:
     shinyWidgets,
     bslib (>= 0.9.0),
     waiter,
-    collapse,
     data.table,
     jsonlite,
     stringr,
@@ -61,8 +61,13 @@ Remotes:
   artalytics/artpixeltrace,
   artalytics/artpipelines,
   r-data-science/rdstools
-Depends: 
+Depends:
   R (>= 4.1.0)
 Suggests:
   covr,
+  knitr,
+  quarto,
+  rmarkdown,
   testthat (>= 3.0.0)
+VignetteBuilder: quarto
+Config/Needs/website: pkgdown, artalytics/templ.pkgdown
