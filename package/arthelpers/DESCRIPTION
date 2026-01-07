@@ -11,6 +11,7 @@ RoxygenNote: 7.3.3
 URL: https://docs.artalytics.dev/r/arthelpers, https://github.com/artalytics/arthelpers
 BugReports: https://github.com/artalytics/arthelpers/issues
 Config/testthat/edition: 3
+Config/Needs/website: pkgdown, artalytics/templ.pkgdown
 Imports:
     artcore (>= 0.7.1),
     shiny,
