@@ -11,6 +11,7 @@ RoxygenNote: 7.3.3
 URL: https://docs.artalytics.dev/r/artcurator, https://github.com/artalytics/artcurator
 BugReports: https://github.com/artalytics/artcurator/issues
 Config/testthat/edition: 3
+Config/Needs/website: pkgdown, artalytics/templ.pkgdown
 Imports:
     artcore (>= 1.4.0),
     artgemini (>= 0.3.0),
