@@ -27,6 +27,7 @@ SystemRequirements:
     TIFF (libtiff5-dev),  
     Fortran compiler (gfortran)
 Config/testthat/edition: 3
+Config/Needs/website: pkgdown, artalytics/templ.pkgdown
 Imports:
     artutils (>= 0.12),
     artcore,
