@@ -1,6 +1,6 @@
 Package: modUpload
 Title: Art Upload Module
-Version: 1.1.0
+Version: 1.2.0
 Authors@R:
     person(given = "Bobby",
            family = "Fatemi",
@@ -14,26 +14,12 @@ RoxygenNote: 7.3.3
 URL: https://github.com/artalytics/modUpload,
   https://docs.artalytics.dev/r/modUpload
 BugReports: https://github.com/artalytics/modUpload/issues
-SystemRequirements:
-  ImageMagick++ (libmagick++-dev),
-  FFmpeg/libavfilter (libavfilter-dev),
-  Archive (libarchive-dev),
-  ExifTool (libimage-exiftool-perl),
-  Tesseract OCR (libtesseract-dev, libleptonica-dev, tesseract-ocr-eng),
-  Poppler PDF (libpoppler-cpp-dev, poppler-data),
-  Armadillo (libarmadillo-dev),
-  BLAS/LAPACK (libblas-dev, liblapack-dev),
-  ARPACK (libarpack++2-dev),
-  FFTW3 (libfftw3-dev),
-  JPEG (libjpeg-dev),
-  PNG (libpng-dev),
-  TIFF (libtiff5-dev),
-  Fortran compiler (gfortran)
 Config/testthat/edition: 3
 Imports:
     artcore,
     artutils,
-    artshiny (>= 0.2.1),
+    artopensea,
+    artshiny (>= 0.3.0),
     artpixeltrace,
     artpipelines,
     rdstools,
@@ -49,21 +35,20 @@ Imports:
     stringr,
     future,
     promises,
-    rlang,
-    lubridate,
-    utils,
-    DBI,
-    htmltools
+    DBI
 Remotes:
   artalytics/artcore,
   artalytics/artutils,
+  artalytics/artopensea,
   artalytics/artshiny,
   artalytics/artpixeltrace,
   artalytics/artpipelines,
+  artalytics/arthelpers,
   r-data-science/rdstools
 Depends:
   R (>= 4.1.0)
 Suggests:
+  arthelpers,
   covr,
   knitr,
   quarto,
