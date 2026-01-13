@@ -26,7 +26,8 @@ Imports:
     stringr,
     fs,
     utils,
-    testthat
+    testthat,
+    lubridate
 Remotes: 
     artalytics/artcore
 Suggests:
